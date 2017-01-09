@@ -16,7 +16,7 @@ bio             | text      |
 Note: disciplines will be an array, minimum length 1, can only include
 values "roadrun", "trailrun", "roadbike", "mbike"
 
-Note: Bonus data to include: height, weight, weekly_bike_miles, weekly_run_miles
+Note: Bonus data to include: height, weight, weekly_bike_miles, weekly_run_miles, strava_username, ultrasignup_username
 
 ## groups
 column name     | data type | details
