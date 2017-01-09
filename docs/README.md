@@ -34,7 +34,7 @@ TrekMates is a web application for endurance athletes, inspired by Meetup and bu
 
 ##Implementation Timeline
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+### Phase 1: Backend setup and Front End User Authentication (1 day)
 
 **Objective:** Functioning rails project with front-end Authentication
 
@@ -54,7 +54,7 @@ TrekMates is a web application for endurance athletes, inspired by Meetup and bu
 
 **objective:** Group page displays list of upcoming events
 
-### Phase 6: - Group Search
+### Phase 6: - Group Search (1 day)
 
 **objective:** Search for group based on location and group description.
 
