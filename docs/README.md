@@ -21,7 +21,7 @@ TrekMates is a web application for endurance athletes, inspired by Meetup and bu
 
 ## Design Docs
  * [View Wireframes][wireframes]
- * [React Components][components]
+ * [React Components][component-hierarchy]
  * [API endpoints][api-endpoints]
  * [DB schema][schema]
  * [Sample State][sample-state]
