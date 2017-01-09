@@ -1,8 +1,65 @@
--------React components
-In addition to the wireframes, you should diagram a tree indicating your application's overall component structure.
+## Component Hierarchy
 
-Discuss how you will nest your components. If components will need containers, indicate what state and dispatch props they will need. For presentational components, discuss what props and state they will need.
+**AuthFormContainer**
+ - AuthForm (log in)
 
-Map out your React Routes with their respective components and paths.
+**SplashContainer**
+ - Header
+  - Log in
+  - Sign in
+  - Demo
+ - SplashPage
+ - Footer
 
-See the sample project proposal for an example of this.
+**SignUpContainer**
+- SignUpPage
+
+**HomeContainer**
+- Header
+  -Profile
+  -My Groups
+  -My Events
+  -Create Group
+- Footer
+
+**ProfileFormContainer**
+-Edit profile
+
+**GroupFormContainer**
+-Group Form (new group)
+
+**GroupSearchContainer**
+  + GroupSearch
+
+**GroupIndexContainer**
+ - Group Detail
+  - Group Page
+  - Create Event
+
+**Calendar Container**
+  -Calendar
+
+**EventsContainer**
+ - EventsIndex
+  + EventsIndexItem
+- Event Creation
+
+**EventFormContainer**
+- Event Form
+
+## Routes
+
+|Path   | Component   |
+|-------|-------------|
+|"/"    | "App"       |
+| "/welcome" | "SplashContainer" |
+| "/welcome/sign-in" | "AuthFormContainer" |
+| "/welcome/sign-up" | "SignUpContainer" |
+| "/home" | "HomeContainer" |
+| "/home/search-results" | "GroupSearchContainer"
+| "/group/create" | "GroupFormContainer" |
+| "/group/:groupId" | "GroupIndexContainer" |
+| "/group/:groupId/events" | "EventsContainer" |
+| "/group/:groupId/events/create" | "EventFormContainer" |
+| "/group/:groupId/events/:eventId" | "EventContainer" |
+| "/group/:user/:userId/edit" | "ProfileFormContainer" |
