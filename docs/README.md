@@ -59,8 +59,9 @@ TrekMates is a web application for endurance athletes, inspired by Meetup and bu
 **objective:** Search for group based on location and group description.
 
 ### Bonus Features (TBD)
+- [ ] Group categories and User Disciplines
 - [ ] Optional ability to add pre-traced run/ride route while creating event using google maps.
 - [ ] Functional Comments Section for Events (and possibly for Group Page)
 - [ ] Recommend Groups based on user info, discipline
 - [ ] Friends List; Recommend Friends based on user-provided parameters (disipline, weekly mileage, avg pace, location, etc)
-- [ ] (Ambitious, endgame):  Groups may set default weekly runs/rides.  Users may set their preferred run/ride schedule.  Group AND Friend recommendation based on schedule overlap.
+- [ ] Ambitious, endgame: Groups may set default weekly runs/rides.  Users may set their preferred run/ride schedule.  Group AND Friend recommendation based on schedule overlap.
