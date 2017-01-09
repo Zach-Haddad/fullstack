@@ -56,7 +56,7 @@ TrekMates is a web application for endurance athletes, inspired by Meetup and bu
 
 ### Phase 6: - Group Search (1 day)
 
-**objective:** Search for group based on location and group description.
+**objective:** Search for group based on location and group description
 
 ### Bonus Features (TBD)
 - [ ] Group categories and User Disciplines
