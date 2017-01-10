@@ -42,6 +42,7 @@
 **EventsContainer**
  - EventsIndex
   + EventsIndexItem
+    +EventDetail
 - Event Creation
 
 **EventFormContainer**
