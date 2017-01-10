@@ -11,13 +11,13 @@
 
 TrekMates is a web application for endurance athletes, inspired by Meetup and built using Ruby on Rails and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
- Hosting on Heroku
- New account creation, login, and guest/demo login
- Creating and Joining Groups
- Creating and RSVPing for Events
- Calendar of Events for Groups
- Search Groups by Location and Group Info
- Production README
+- [ ] Hosting on Heroku
+- [ ] New account creation, login, and guest/demo login
+- [ ] Creating and Joining Groups
+- [ ] Creating and RSVPing for Events
+- [ ] Calendar of Events for Groups
+- [ ] Search Groups by Location and Group Info
+- [ ] Production README
 
 ## Design Docs
  * [View Wireframes][wireframes]
