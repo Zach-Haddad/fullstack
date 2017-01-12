@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: linear-gradient(#130320, #342C3B);
+  // background: linear-gradient(#130320, white);
   border-bottom: 3px solid grey;
 }
 
@@ -17,9 +17,26 @@
   list-style-type: none;
 }
 
-.header-button {
-  margin: 3%;
+.nav-session-buttons button {
+  margin-top: 10px;
   display: inline-block;
-  padding: 1%;
+  padding: 10px;
   background: $light-gray;
+  height: 40px;
+}
+
+.left-nav {
+  align-items: center;
+}
+
+.left-nav h1{
+  display:inline-block;
+}
+
+.logo {
+  background: url(http://res.cloudinary.com/zach/image/upload/v1484254661/mountain-3-512_vpzuc8.png);
+  height: 30px;
+  width: 30px;
+  background-size: 100%;
+  display:inline-block;
 }

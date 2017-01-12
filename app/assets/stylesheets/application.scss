@@ -12,5 +12,9 @@
  *
  *= require_self
  */
-@import 'greeting';
-@import 'navbar';
+
+ @import "base/colors";
+
+// components
+  @import "components/greeting";
+  @import "components/navbar";
