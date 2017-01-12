@@ -9,9 +9,11 @@ class Welcome extends React.Component{
 
   render(){
     return(
-      <div>
-        welcome page goes here
-      {this.props.children}
+      <div className="welcome-container">
+        {this.props.children}
+
+        <div className="hero"></div>
+
       </div>
     );
   }

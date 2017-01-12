@@ -20,7 +20,6 @@ class Home extends React.Component{
       <p>home page</p>
     );
   }
-
 }
 
 
