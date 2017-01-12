@@ -8,8 +8,8 @@
 
 
 .hero {
-  height: calc(100vh - 64px);
-  background-image: url('http://res.cloudinary.com/zach/image/upload/v1484184470/8tjbrqgkfyu-david-marcu_bgudkd.jpg');
+  max-width: 100%;
+  height: auto;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
