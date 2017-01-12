@@ -11,7 +11,7 @@ const App = ({ children }) => (
 
     { children }
 
-    <footer>
+    <footer className="footer">
       <p>footer els here</p>
     </footer>
   </div>
