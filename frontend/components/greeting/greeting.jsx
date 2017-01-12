@@ -33,7 +33,7 @@ class Greeting extends React.Component {
         <div className="left-nav">
           <div className="logo"></div>
           <Link to="/" className="header-link">
-            <h1>TrekMates</h1>
+            <h1 className='logo-name'>TrekMates</h1>
           </Link>
         </div>
 
