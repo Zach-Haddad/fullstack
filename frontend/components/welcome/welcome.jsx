@@ -13,7 +13,13 @@ class Welcome extends React.Component{
         {this.props.children}
 
         <div className="hero-frame">
-        <img className="hero" src='http://res.cloudinary.com/zach/image/upload/v1484184470/8tjbrqgkfyu-david-marcu_bgudkd.jpg'/>
+          <div className="hero-content">
+            <div className="hero-text">
+              <p>Inspirational quote, join my site, etc</p>
+            </div>
+
+            <div className="hero-buttons"></div>
+          </div>
         </div>
         <p>Description</p>
       </div>
