@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 
 class Home extends React.Component{
@@ -9,21 +9,19 @@ class Home extends React.Component{
       userId: this.props.currentUser.id
     };
   }
+    componentDidUpdate(){
+      if (!this.props.currentUser){
+        this.props.router.push('/welcome');
+      }
+    }
 
   render(){
-    const personalGreeting = (currentUser, logout) => (
-      <hgroup className="header-group">
-        <h2 className="header-name">Hi, {currentUser.username}!</h2>
-        <button className="header-button" onClick={logout}>Log Out</button>
-      </hgroup>
+    return(
+      <p>home page</p>
     );
-
-
   }
-
-
 
 }
 
 
-export default Home;
+export default withRouter(Home);
