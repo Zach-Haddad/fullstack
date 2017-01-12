@@ -50,10 +50,10 @@ class Greeting extends React.Component {
 
     const navBarLoggedIn = (currentUser) => (
       <nav className="nav-bar-logged-in">
-        <div className="title">
-          <img className="logo" src="http://res.cloudinary.com/zach/image/upload/v1484254661/mountain-3-512_vpzuc8.png"/>
+        <div className="left-nav">
+          <div className="logo"></div>
           <Link to="/" className="header-link">
-            <h1>TrekMates</h1>
+            <h1 className='logo-name'>TrekMates</h1>
           </Link>
         </div>
 

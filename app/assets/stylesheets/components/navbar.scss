@@ -3,7 +3,7 @@
 
 }
 
-.nav-bar-logged-out {
+.nav-bar-logged-out, .nav-bar-logged-in {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -23,6 +23,7 @@
   padding: 10px;
   background: $light-gray;
   height: 40px;
+  border-radius: 10px;
 }
 
 .left-nav {
