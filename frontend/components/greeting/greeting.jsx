@@ -7,6 +7,7 @@ class Greeting extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
+    this.redirect = this.redirect.bind(this);
   }
 
   handleLogout(e){
@@ -17,9 +18,13 @@ class Greeting extends React.Component {
     return () => hashHistory.push(`welcome/${mode}`);
   }
 
+  redirect(){
+    this.props.router.push("/home");
+  }
+
   handleDemo(){
     const user = {username: 'user', password: 'password'};
-    this.props.login({user}).then( () => this.props.router.push("/home"));
+    this.props.login({user}).then( () => this.redirect(), () => console.log('i faield'));
   }
 
   render(){

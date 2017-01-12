@@ -1,0 +1,25 @@
+.nav-bar-logged-in {
+  display: flex;
+
+}
+
+.nav-bar-logged-out {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: linear-gradient(#130320, #342C3B);
+  border-bottom: 3px solid grey;
+}
+
+.nav-session-buttons {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+.header-button {
+  margin: 3%;
+  display: inline-block;
+  padding: 1%;
+  background: $light-gray;
+}
