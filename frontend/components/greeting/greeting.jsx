@@ -1,23 +1,65 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory, withRouter } from 'react-router';
 
-const sessionLinks = () => (
-  <nav className="login-signup">
-    <Link to="/welcome/login" activeClassName="current">Login</Link>
-    &nbsp;or&nbsp;
-    <Link to="/welcome/signup" activeClassName="current">Sign up!</Link>
-  </nav>
-);
+class Greeting extends React.Component {
+  constructor(){
+    super();
+    this.handleLogout = this.handleLogout.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
+  }
 
-const personalGreeting = (currentUser, logout) => (
-	<hgroup className="header-group">
-    <h2 className="header-name">Hi, {currentUser.username}!</h2>
-    <button className="header-button" onClick={logout}>Log Out</button>
-	</hgroup>
-);
+  handleLogout(e){
+    this.props.logout();
+  }
 
-const Greeting = ({currentUser, logout}) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
-);
+  handleClick(mode){
+    return () => hashHistory.push(`welcome/${mode}`);
+  }
 
-export default Greeting;
+  handleDemo(){
+    const user = {username: 'user', password: 'password'};
+    this.props.login({user}).then( () => this.props.router.push("/home"));
+  }
+
+  render(){
+    const navBarLoggedOut = () => (
+      <nav className="nav-bar-logged-out">
+        <div className="logo">
+          <Link to="/" className="header-link">
+            <h1>TrekMates</h1>
+          </Link>
+        </div>
+
+        <div className="nav-session-buttons">
+          <button onClick={this.handleClick('login')}>Log In</button>
+          &nbsp;
+          <button onClick={this.handleClick('signup')}>Sign Up</button>
+          &nbsp;
+          <button onClick={this.handleDemo}>Demo</button>
+        </div>
+
+      </nav>
+    );
+
+    const navBarLoggedIn = (currentUser) => (
+      <nav className="nav-bar-logged-in">
+        <div className="logo">
+          <Link to="/" className="header-link">
+            <h1>TrekMates</h1>
+          </Link>
+        </div>
+
+        <div className="nav-options">
+          <h2 className="header-name">Hi, {currentUser.username}!</h2>
+          <button className="header-button" onClick={this.handleLogout}>Log Out</button>
+        </div>
+      </nav>
+    );
+
+    return this.props.currentUser ? navBarLoggedIn(this.props.currentUser) : navBarLoggedOut()
+  }
+}
+
+
+export default withRouter(Greeting);
