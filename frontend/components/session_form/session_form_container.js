@@ -7,8 +7,29 @@ const mapStateToProps = ({ session }) => ({
   errors: session.errors
 });
 
+// messy code below; determining path on consecutive clicks of same button
+// yielded 'ogin' or 'ignup'
 const mapDispatchToProps = (dispatch, { location }) => {
-  const formType = location.pathname.slice(9);
+  let path = location.pathname.slice(9);
+  let formType;
+    switch (path) {
+      case 'login':
+        formType = 'login';
+        break;
+      case 'signup':
+        formType = 'signup';
+        break;
+      case 'ogin':
+        formType = 'login';
+        break;
+      case 'ignup':
+        formType = 'signup';
+        break;
+      default:
+        formType = 'login';
+        break;
+    }
+
   const processForm = (formType === 'login') ? login : signup;
 
   return {

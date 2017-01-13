@@ -51,6 +51,11 @@ class SessionForm extends React.Component {
 	}
 
 	render() {
+		const newUserForms = () => {
+			if (this.props.formType === "signup"){
+				return (<p>hello</p>);
+			}
+		};
 
 		return (
 			<div className="login-form-container">
@@ -60,6 +65,8 @@ class SessionForm extends React.Component {
 					Please {this.props.formType} or {this.navLink()}
 					{this.renderErrors()}
 					<div className="login-form">
+						<br/>
+						{newUserForms()}
 						<br/>
 						<label> Username:
 							<input type="text"
