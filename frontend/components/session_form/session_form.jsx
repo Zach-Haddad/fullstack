@@ -51,9 +51,10 @@ class SessionForm extends React.Component {
 	}
 
 	render() {
+		// add in later! discipline, etc
 		const newUserForms = () => {
 			if (this.props.formType === "signup"){
-				return (<p>hello</p>);
+				return (<p>additional signup params here</p>);
 			}
 		};
 
