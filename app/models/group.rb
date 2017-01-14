@@ -1,9 +1,24 @@
+# == Schema Information
+#
+# Table name: groups
+#
+#  id             :integer          not null, primary key
+#  group_owner_id :integer          not null
+#  name           :string           not null
+#  description    :text             not null
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
 class Group < ActiveRecord::Base
   validates :group_owner_id, :name, presence: true
+  validates :name, uniqueness: true
 
-  has_many :users
+  has_many :memberships
+
+  has_many :members, through: :memberships, source: :member
 
   belongs_to :owner,
-  foreign_key: :owner_id
-
+  foreign_key: :owner_id,
+  class_name: "User"
 end

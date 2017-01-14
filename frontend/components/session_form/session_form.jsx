@@ -6,6 +6,7 @@ class SessionForm extends React.Component {
 		super(props);
 		this.state = { username: "", password: "" };
 		this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
 	}
 
 	componentDidUpdate() {
@@ -38,17 +39,19 @@ class SessionForm extends React.Component {
 		}
 	}
 
-	renderErrors() {
-		return(
-			<ul>
-				{this.props.errors.map((error, i) => (
-					<li key={`error-${i}`}>
-						{error}
-					</li>
-				))}
-			</ul>
-		);
-	}
+  renderErrors() {
+     if(this.props.errors){
+       return(
+         <ul className='errors'>
+           {this.props.errors.map((error, i) => (
+             <li key={`error-${i}`}>
+               {error}
+             </li>
+           ))}
+         </ul>
+       );
+     }
+   }
 
 	render() {
 		// add in later! discipline, etc
@@ -64,8 +67,8 @@ class SessionForm extends React.Component {
 					Welcome to TrekMates!
 					<br/>
 					Please {this.props.formType} or {this.navLink()}
-					{this.renderErrors()}
 					<div className="login-form">
+            {this.renderErrors()}
 						<br/>
 						{newUserForms()}
 						<br/>

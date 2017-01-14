@@ -3,6 +3,7 @@ import { hashHistory } from 'react-router';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+// export const CLEAR_SESSION_ERRORS = 'CLEAR_SESSION_ERRORS';
 
 export const login = user => dispatch => (
   APIUtil.login(user)
@@ -30,3 +31,7 @@ export const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,
   errors
 });
+
+// export const clearSessionErrors = () => ({
+//   type: CLEAR_SESSION_ERRORS
+// });

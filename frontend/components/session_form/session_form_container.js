@@ -10,29 +10,13 @@ const mapStateToProps = ({ session }) => ({
 // messy code below; determining path on consecutive clicks of same button
 // yielded 'ogin' or 'ignup'
 const mapDispatchToProps = (dispatch, { location }) => {
-  let path = location.pathname.slice(9);
-  let formType;
-    switch (path) {
-      case 'login':
-        formType = 'login';
-        break;
-      case 'signup':
-        formType = 'signup';
-        break;
-      case 'ogin':
-        formType = 'login';
-        break;
-      case 'ignup':
-        formType = 'signup';
-        break;
-      default:
-        formType = 'login';
-        break;
-    }
+  let formType = location.pathname[0] ===
+    "/" ? location.pathname.slice(9) : location.pathname.slice(8);
 
   const processForm = (formType === 'login') ? login : signup;
 
   return {
+    // clearSessionErrors: () => dispatch(clearSessionErrors()),
     processForm: user => dispatch(processForm(user)),
     formType
   };
