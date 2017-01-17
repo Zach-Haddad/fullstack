@@ -15,8 +15,8 @@ class Api::GroupsController < ApplicationController
   end
 
   def index
-    # implement search here
-
+    @groups = Group.all
+    # temporary, need to implement search here
   end
 
   def update
