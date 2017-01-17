@@ -18,7 +18,6 @@ class groupForm extends React.Component {
   const newGroup = merge({}, this.state, {group_owner_id: this.props.currentUserId});
   this.props.createGroup(newGroup)
     .then(data => {
-      debugger
       this.props.router.push(`/groups/${data.group.id}`);});
   }
 

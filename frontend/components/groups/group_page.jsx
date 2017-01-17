@@ -17,7 +17,6 @@ class GroupPage extends React.Component {
 
   componentWillReceiveProps(nextProps){
     if((nextProps.params.groupId) !== this.props.params.groupId){
-      debugger
       this.props.fetchGroup(nextProps.params.groupId);
     }
     this.setState({ name: nextProps.group.name, description: nextProps.group.description});

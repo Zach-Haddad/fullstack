@@ -22,7 +22,6 @@ export const fetchGroup = (groupId) => (
 // )
 
 export const createGroup = (group) => {
-  debugger
   return(
   $.ajax({
     method: "POST",

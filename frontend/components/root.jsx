@@ -40,13 +40,16 @@ const Root = ({ store }) => {
 
           <Route path="home" component={ HomeContainer } onEnter={_ensureLoggedIn}>
             <Route path='groups' component={ GroupIndexContainer }/>
-            <Route path='add_group' component={ GroupFormContainer }/>
           </Route>
+
+          <Route path='add_group' component={ GroupFormContainer }/>
 
           <Route path='groups/:groupId' component={ GroupPageContainer }>
           {/*
+          //   <IndexRoute component={ GroupPageContentContainer } />
           //   <Route path='edit' component={ GroupEditContainer }/>
-          //   <Route path='events' component={ GroupEventsContainer }/>
+          //   <Route path='calendar' component={ GroupCalendarContainer } />
+          //   <Route path='events/:eventId' component={ EventPageContainer }/>
           */}
           </Route>
         </Route>
