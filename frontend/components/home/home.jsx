@@ -20,6 +20,7 @@ class Home extends React.Component{
       <div>
         <p>home page content</p>
         <p>my groups/my events</p>
+        {this.props.children}
       </div>
     );
   }
