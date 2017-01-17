@@ -6,7 +6,7 @@ import { merge } from 'lodash';
 const _nullGroups = Object.freeze({
   groups: [],
   errors: [],
-  currentGroup: {},
+  // currentGroup: {},
   users: []
 });
 

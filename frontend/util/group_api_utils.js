@@ -21,13 +21,16 @@ export const fetchGroup = (groupId) => (
 //   })
 // )
 
-export const createGroup = (group) => (
+export const createGroup = (group) => {
+  debugger
+  return(
   $.ajax({
     method: "POST",
     url: `api/groups`,
     data: { group }
   })
 );
+};
 
 export const editGroup = (group) => (
   $.ajax({

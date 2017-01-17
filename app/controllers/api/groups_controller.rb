@@ -3,7 +3,7 @@ class Api::GroupsController < ApplicationController
     @group = Group.new(group_params)
 
     if @group.save
-      render "api/group/show"
+      render "api/groups/show"
     else
       render json: @group.errors.full_messages, status: 422
     end
@@ -11,7 +11,7 @@ class Api::GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    render :show
+    render "api/groups/show"
   end
 
   def index
