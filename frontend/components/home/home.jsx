@@ -17,7 +17,10 @@ class Home extends React.Component{
 
   render(){
     return(
-      <p>home page</p>
+      <div>
+        <p>home page content</p>
+        <p>my groups/my events</p>
+      </div>
     );
   }
 }

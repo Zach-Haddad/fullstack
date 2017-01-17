@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/group_api_util';
+import * as APIUtil from '../util/group_api_utils';
 
 // constants
 export const RECEIVE_GROUPS = "RECEIVE_GROUPS";
