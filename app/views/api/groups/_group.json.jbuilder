@@ -1,1 +1,1 @@
-json.extract! group, :name, :owner_id, :description
+json.extract! group, :name, :group_owner_id, :description
