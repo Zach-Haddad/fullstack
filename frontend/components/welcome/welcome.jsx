@@ -21,10 +21,6 @@ class Welcome extends React.Component{
             <div className="hero-buttons"></div>
           </div>
         </div>
-
-        <div className="welcome-content">
-          <p>Description</p>
-        </div>
       </div>
     );
   }

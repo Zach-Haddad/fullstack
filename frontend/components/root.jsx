@@ -46,6 +46,7 @@ const Root = ({ store }) => {
           <Route path='groups/:groupId' component={ GroupPageContainer }>
           {/*
           //   <Route path='edit' component={ GroupEditContainer }/>
+          //   <Route path='events' component={ GroupEventsContainer }/>
           */}
           </Route>
         </Route>

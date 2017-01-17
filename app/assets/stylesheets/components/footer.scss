@@ -1,7 +1,31 @@
 .footer{
   margin-top: -20px;
   width: 100%;
-  height: 20px;
+  height: auto;
   background-color: black;
   color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-links{
+  display: flex;
+  position: relative;
+  border-top: 1px solid $light-gray;
+}
+
+.footer-logo {
+  background: url(http://res.cloudinary.com/zach/image/upload/v1484254661/mountain-3-512_vpzuc8.png);
+  height: 30px;
+  width: 30px;
+  background-size: 100%;
+  display:inline-block;
+}
+
+.footer-links a{
+  margin: 0px 10px 10px 10px;
+  padding: 10px 15px 0px 15px;
 }
