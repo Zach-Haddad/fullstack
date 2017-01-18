@@ -1,0 +1,20 @@
+.group-form-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: $fira;
+}
+
+.group-form {
+  position: relative;
+  align-content: center;
+  text-align: center;
+  margin: auto;
+  background-color: $light-gray;
+  padding: 40px;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background: DarkSlateGray;
+}

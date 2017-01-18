@@ -42,18 +42,29 @@ class groupForm extends React.Component {
           {this.errors()}
         </ul>
         <form className="group-form" onSubmit={this.handleSubmit}>
+          <label>What is the name of your group?</label>
+          <br />
+          <br />
             <input
               type="text"
               value={this.state.name}
               placeholder="Name"
               onChange={this.update('name')}
             />
+          <br />
+          <br />
+          <label>Describe your group!</label>
+          <br />
+          <br />
             <textarea
               type="text"
               value={this.state.description}
               placeholder="Description"
               onChange={this.update('description')}
             />
+          <br />
+          <br />
+
           <button>Create Group</button>
         </form>
       </section>
