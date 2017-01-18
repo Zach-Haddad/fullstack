@@ -9,10 +9,10 @@ class GroupPage extends React.Component {
       name: "",
       description: ""
     };
-    // this.addUserToGroup = this.addUserToGroup.bind(this);
-    // this.removeUserFromGroup = this.removeUserFromGroup.bind(this);
+    this.addUserToGroup = this.addUserToGroup.bind(this);
+    this.removeUserFromGroup = this.removeUserFromGroup.bind(this);
     // this.editGroup = this.editGroup.bind(this);
-    // this.deleteGroup = this.deleteGroup.bind(this);
+    this.deleteGroup = this.deleteGroup.bind(this);
   }
 
   componentWillReceiveProps(nextProps){
@@ -26,14 +26,43 @@ class GroupPage extends React.Component {
     this.props.fetchGroup(this.props.params.groupId);
   }
 
+  addUserToGroup(){
+    this.props.addUserToGroup({group_id: this.props.group.id, member_id: this.props.currentUser.id})
+  }
+
+  removeUserFromGroup(){
+    this.props.removeUserFromGroup({group_id: this.props.group.id, member_id: this.props.currentUser.id})
+  }
+
+  deleteGroup(){
+    this.props.deleteGroup(this.props.group.id)
+      .then(() => this.props.router.push("/home"));
+  }
+
+  joinToggleButton(){
+    if (this.props.group.members){
+      const userId = this.props.currentUser.id;
+      if (this.props.group.group_owner_id !== userId){
+          if (this.props.group.memberIds.includes(userId)){
+              return(<button onClick={this.removeUserFromGroup}>Leave Group</button>)
+            } else {
+              return(<button onClick={this.addUserToGroup}>Join Group</button>);
+          }
+      } else {
+        return (<button onClick={this.deleteGroup()}>Delete Group</button>);
+      }
+    }
+  }
+  // just show a button to delete the group if you are the owner
+
   render(){
     const { group, children } = this.props;
     return(
       <div className="group-page">
-        <div className="group-page-header">  
+        <div className="group-page-header">
           <h1>{group.name}</h1>
           <p>{group.description}</p>
-          <p>Join/Leave Group</p>
+          <p>{this.joinToggleButton()}</p>
         </div>
         {children}
       </div>

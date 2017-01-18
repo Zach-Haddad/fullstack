@@ -11,7 +11,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetchGroup: (id) => dispatch(fetchGroup(id)),
   editGroup: (group) => dispatch(editGroup(group)),
-  addUserToGroup: (id) => dispatch(addUserToGroup(id)),
+  addUserToGroup: (data) => dispatch(addUserToGroup(data)),
   removeUserFromGroup: (id) => dispatch(removeUserFromGroup(id)),
   deleteGroup: (id) => dispatch(deleteGroup(id))
 });

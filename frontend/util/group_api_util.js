@@ -14,22 +14,13 @@ export const fetchGroup = (groupId) => (
   })
 );
 
-// export const fetchGroupUsers = (groupId) => (
-//   $.ajax({
-//     method: "GET",
-//     url: ``
-//   })
-// )
-
-export const createGroup = (group) => {
-  return(
+export const createGroup = (group) => (
   $.ajax({
     method: "POST",
     url: `api/groups`,
     data: { group }
   })
 );
-};
 
 export const editGroup = (group) => (
   $.ajax({
@@ -46,16 +37,18 @@ export const deleteGroup = (groupId) => (
   })
 );
 
-export const addUserToGroup = (groupId) => (
+export const addUserToGroup = (data) => (
   $.ajax({
     method: "POST",
-    url: `api/groups/${groupId}/join`
+    url: `api/memberships`,
+    data
   })
 );
 
-export const removeUserFromGroup = (groupId) => (
+export const removeUserFromGroup = (data) => (
   $.ajax({
     method: "DELETE",
-    url: `api/groups/${groupId}/leave`
+    url: `api/memberships`,
+    data
   })
 );

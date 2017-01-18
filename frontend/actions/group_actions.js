@@ -4,7 +4,6 @@ import * as APIUtil from '../util/group_api_util';
 export const RECEIVE_GROUPS = "RECEIVE_GROUPS";
 export const RECEIVE_GROUP = "RECEIVE_GROUP";
 export const RECEIVE_GROUP_ERRORS = "RECEIVE_GROUP_ERRORS";
-export const RECEIVE_GROUP_USERS = "RECEIVE_GROUP_USERS";
 export const REMOVE_GROUP = "REMOVE_GROUP";
 
 // ACs
@@ -22,11 +21,6 @@ export const receiveGroup = (group) => ({
 export const receiveGroupErrors = (errors) => ({
   type: RECEIVE_GROUP_ERRORS,
   errors
-});
-
-export const receiveGroupUsers = (users) => ({
-  type: RECEIVE_GROUP_USERS,
-  users
 });
 
 export const removeGroup = (group) => ({
@@ -71,18 +65,18 @@ export const deleteGroup = (groupId) => dispatch => (
     )
 );
 
-export const addUserToGroup = (groupId) => dispatch => (
-  APIUtil.addUserToGroup(groupId)
+export const addUserToGroup = (data) => dispatch => (
+  APIUtil.addUserToGroup(data)
     .then(
-      users => dispatch(receiveGroupUsers(users)),
+      info => dispatch(receiveGroup(info)),
       err => dispatch(receiveGroupErrors(err.responseJSON))
     )
 );
 
-export const removeUserFromGroup = (groupId) => dispatch => (
-  APIUtil.removeUserFromGroup(groupId)
+export const removeUserFromGroup = (id) => dispatch => (
+  APIUtil.removeUserFromGroup(id)
     .then(
-      users => dispatch(receiveGroupUsers(users)),
+      data => dispatch(receiveGroup(data)),
       err => dispatch(receiveGroupErrors(err.responseJSON))
     )
 );

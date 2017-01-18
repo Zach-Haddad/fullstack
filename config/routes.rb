@@ -8,8 +8,10 @@ Rails.application.routes.draw do
       resources :events, only: [:create]
     end
     resources :events, only: [:index, :show, :update, :destroy]
-    resources :rsvps, only: [:create, :destroy]
-    resources :memberships, only: [:create, :destroy]
+    resources :rsvps, only: [:create]
+    delete '/rsvps', to: 'rsvps#delete'
+    resources :memberships, only: [:create]
+    delete '/memberships', to: 'memberships#delete'
   end
 end
 

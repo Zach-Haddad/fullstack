@@ -50,6 +50,7 @@ class groupForm extends React.Component {
               value={this.state.name}
               placeholder="Name"
               onChange={this.update('name')}
+              required
             />
           <br />
           <br />
@@ -61,6 +62,7 @@ class groupForm extends React.Component {
               value={this.state.description}
               placeholder="Description"
               onChange={this.update('description')}
+              required
             />
           <br />
           <br />

@@ -1,1 +1,1 @@
-@groups.each{ |group| json.set! group.id, group}
+json.array! @groups, :id, :name, :description
