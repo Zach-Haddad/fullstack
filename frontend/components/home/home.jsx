@@ -19,6 +19,7 @@ class Home extends React.Component{
     return(
       <div>
         <p>home page content</p>
+        <Link to='home/groups'>View All Groups (Temp Index)</Link>
         <p>my groups/my events</p>
         {this.props.children}
       </div>

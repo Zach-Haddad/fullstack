@@ -3,6 +3,7 @@ class Api::GroupsController < ApplicationController
     @group = Group.new(group_params)
 
     if @group.save
+      Membership.create(group_id: @group.id, user_id: current_user.id)
       render "api/groups/show"
     else
       render json: @group.errors.full_messages, status: 422
@@ -16,6 +17,7 @@ class Api::GroupsController < ApplicationController
 
   def index
     @groups = Group.all
+    render "api/groups/index"
     # temporary, need to implement search here
   end
 
@@ -30,7 +32,7 @@ class Api::GroupsController < ApplicationController
 
   def destroy
     @group = Group.find(params[:id])
-    @group.destroy
+    @group.delete
     render '/home'
   end
 

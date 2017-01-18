@@ -27,11 +27,15 @@ class GroupPage extends React.Component {
   }
 
   render(){
-    const { group } = this.props;
+    const { group, children } = this.props;
     return(
-      <div className="group_page">
-        <h1>{group.name}</h1>
-        <p>{group.description}</p>
+      <div className="group-page">
+        <div className="group-page-header">  
+          <h1>{group.name}</h1>
+          <p>{group.description}</p>
+          <p>Join/Leave Group</p>
+        </div>
+        {children}
       </div>
     );
   }

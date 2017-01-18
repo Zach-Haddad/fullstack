@@ -50,6 +50,7 @@ const Root = ({ store }) => {
           //   <Route path='edit' component={ GroupEditContainer }/>
           //   <Route path='calendar' component={ GroupCalendarContainer } />
           //   <Route path='events/:eventId' component={ EventPageContainer }/>
+          //   <Route path='events/new' component={ EventFormContainer }/>
           */}
           </Route>
         </Route>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { withRouter, Link } from 'react-router';
 import { merge } from 'lodash';
 
 class groupForm extends React.Component {
@@ -66,6 +66,10 @@ class groupForm extends React.Component {
           <br />
 
           <button>Create Group</button>
+          <br />
+          <br />
+
+          <Link to='/home'>Back to Homepage</Link>
         </form>
       </section>
     );
