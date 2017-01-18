@@ -49,7 +49,7 @@ class GroupPage extends React.Component {
               return(<button onClick={this.addUserToGroup}>Join Group</button>);
           }
       } else {
-        return (<button onClick={this.deleteGroup()}>Delete Group</button>);
+        return (<button onClick={this.deleteGroup}>Delete Group</button>);
       }
     }
   }

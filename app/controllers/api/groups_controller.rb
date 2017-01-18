@@ -33,7 +33,7 @@ class Api::GroupsController < ApplicationController
   def destroy
     @group = Group.find(params[:id])
     @group.delete
-    render '/home'
+    render "api/groups/index"
   end
 
   private

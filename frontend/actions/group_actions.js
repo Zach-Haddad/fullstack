@@ -1,4 +1,5 @@
 import * as APIUtil from '../util/group_api_util';
+import { hashHistory } from 'react-router';
 
 // constants
 export const RECEIVE_GROUPS = "RECEIVE_GROUPS";
@@ -63,6 +64,7 @@ export const deleteGroup = (groupId) => dispatch => (
       group => dispatch(removeGroup(group)),
       err => dispatch(receiveGroupErrors(err.responseJSON))
     )
+    .then(hashHistory.push('/home'))
 );
 
 export const addUserToGroup = (data) => dispatch => (
