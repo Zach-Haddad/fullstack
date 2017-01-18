@@ -3,7 +3,7 @@ class Api::GroupsController < ApplicationController
     @group = Group.new(group_params)
 
     if @group.save
-      Membership.create(group_id: @group.id, user_id: current_user.id)
+      Membership.create(group_id: @group.id, member_id: current_user.id)
       render "api/groups/show"
     else
       render json: @group.errors.full_messages, status: 422

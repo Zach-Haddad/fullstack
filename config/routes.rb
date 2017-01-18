@@ -12,3 +12,5 @@ Rails.application.routes.draw do
     resources :memberships, only: [:create, :destroy]
   end
 end
+
+# get 'search' on :collection
