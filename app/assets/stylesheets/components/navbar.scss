@@ -1,6 +1,5 @@
 .nav-bar-logged-in {
   display: flex;
-
 }
 
 .nav-bar-logged-out, .nav-bar-logged-in {
@@ -21,12 +20,14 @@
 
 .nav-session-buttons button, .nav-options button {
   margin-top: 10px;
-  margin-left: 20px;
+  margin-left: 30px;
   display: inline-block;
   padding: 10px;
   background: $light-gray;
   height: 40px;
   border-radius: 10px;
+  font-family: $fira;
+  font-size: 15px;
 }
 
 .nav-session-buttons button:hover, .nav-options button:hover {

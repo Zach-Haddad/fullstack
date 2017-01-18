@@ -59,6 +59,7 @@ class Greeting extends React.Component {
 
         <div className="nav-options">
           <h2 className="header-name">Hi, {currentUser.username}!</h2>
+          <Link to='/add_group'><button>Create Group</button></Link>
           <button className="header-button" onClick={this.handleLogout}>Log Out</button>
         </div>
       </nav>

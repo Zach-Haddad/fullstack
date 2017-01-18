@@ -24,9 +24,18 @@ class User < ActiveRecord::Base
 
   has_many :groups, through: :memberships, source: :group
 
+  has_many :rsvps
+  has_many :events, through: :rsvps, source: :event
+
   attr_reader :password
 
   after_initialize :ensure_session_token
+
+  def self.next_event(user_id)
+    User.find(user_id).events.where("events.time > ?", Time.new).order(:event_time).limit(1)
+  end
+
+  # auth
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

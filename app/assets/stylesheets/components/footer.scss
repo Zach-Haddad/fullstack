@@ -1,14 +1,16 @@
 .footer{
-  margin-top: -20px;
   width: 100%;
   height: auto;
   background-color: black;
   color: white;
+  opacity: 0.95;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  font-family: $fira;
 }
 
 .footer-links{
