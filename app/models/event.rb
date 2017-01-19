@@ -2,14 +2,15 @@
 #
 # Table name: events
 #
-#  id          :integer          not null, primary key
-#  name        :string           not null
-#  group_id    :integer          not null
-#  time        :datetime         not null
-#  location    :string           not null
-#  description :text             not null
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id             :integer          not null, primary key
+#  name           :string           not null
+#  group_id       :integer          not null
+#  time           :datetime         not null
+#  location       :string           not null
+#  description    :text             not null
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  event_owner_id :integer          not null
 #
 
 class Event < ActiveRecord::Base
@@ -17,8 +18,13 @@ class Event < ActiveRecord::Base
 
   has_many :rsvps
   has_many :attendees, through: :rsvp, source: :user
+
   belongs_to :group
 
+  belongs_to :owner,
+  primary_key: :id,
+  foreign_key: :group_owner_id,
+  class_name: "User"
   #
   # def self.find_user_events(user_id)
   #   groups = User.find(user_id).groups

@@ -24,6 +24,16 @@ class User < ActiveRecord::Base
 
   has_many :groups, through: :memberships, source: :group
 
+  has_many :owned_groups,
+  primary_key: :id,
+  foreign_key: :group_owner_id,
+  class_name: "Group"
+
+  has_many :owned_events,
+  primary_key: :id,
+  foreign_key: :event_owner_id,
+  class_name: "Event"
+
   has_many :rsvps
   has_many :events, through: :rsvps, source: :event
 

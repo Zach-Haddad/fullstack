@@ -70,6 +70,7 @@ class GroupPage extends React.Component {
             <ul>
               <li>Number of members: {group.members.length}</li>
               <li>Group Since: {Date(group.created_at).slice(4, 15)}</li>
+              <li>Creator: {group.owner.username}</li>
             </ul>
           </aside>
           {children}

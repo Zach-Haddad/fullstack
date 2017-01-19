@@ -20,6 +20,7 @@ class Group < ActiveRecord::Base
   has_many :members, through: :memberships, source: :member
 
   belongs_to :owner,
-  foreign_key: :owner_id,
+  primary_key: :id,
+  foreign_key: :group_owner_id,
   class_name: "User"
 end
