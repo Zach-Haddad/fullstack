@@ -18,7 +18,7 @@ class Event < ActiveRecord::Base
   validates :name, :date, :event_owner_id, :group_id, :time, :location, :description, presence: true
 
   has_many :rsvps
-  has_many :attendees, through: :rsvp, source: :user
+  has_many :attendees, through: :rsvps, source: :user
 
   belongs_to :group
 

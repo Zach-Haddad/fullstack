@@ -31,9 +31,21 @@ export const fetchEvent = (id) => dispatch => (
     .then(event => dispatch(receiveEvent(event)))
 );
 
-// export const addUserToEvent = (data) => (
-//
-// export const removeUserFromEvent = (id) => (
+export const addUserToEvent = (data) => dispatch => (
+  APIUtil.addUserToEvent(data)
+    .then(
+      info => dispatch(receiveEvent(info))
+      // err => dispatch(receiveErrors(err.responseJSON))
+    )
+);
+
+export const removeUserFromEvent = (id) => dispatch => (
+  APIUtil.removeUserFromEvent(id)
+    .then(
+      data => dispatch(receiveEvent(data))
+      // err => dispatch(receiveErrors(err.responseJSON))
+    )
+);
 
 export const createEvent = (event) => dispatch => (
   APIUtil.createEvent(event)
@@ -46,3 +58,12 @@ export const createEvent = (event) => dispatch => (
 // export const editEvent = (event) => (
 //
 // export const deleteEvent = (id) => (
+
+export const deleteEvent = (eventId) => dispatch => (
+  APIUtil.deleteEvent(eventId)
+    .then(
+      (events) => dispatch(receiveEvents(events))
+      // err => dispatch(receiveErrors(err.responseJSON))
+    )
+    // .then(hashHistory.push('/home'))
+);

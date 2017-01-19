@@ -12,9 +12,12 @@ import GroupIndexContainer from './home/group_index_container';
 // import SearchContainer from './search/search_container';
 
 import GroupPageContainer from './groups/group_page_container';
-// import GroupEditContainer from './groups/forms/group_page_container';
+import GroupPageContentContainer from './groups/group_page_content_container';
+// import GroupEditContainer from './groups/forms/group_edit_container';
 import GroupFormContainer from './groups/forms/group_form_container';
+
 import EventFormContainer from './events/forms/event_form_container';
+import EventPageContainer from './events/event_page_container';
 
 const Root = ({ store }) => {
 
@@ -53,12 +56,12 @@ const Root = ({ store }) => {
           <Route path='add_group' component={ GroupFormContainer }/>
 
           <Route path='groups/:groupId' component={ GroupPageContainer }>
+            <IndexRoute component={ GroupPageContentContainer } />
             <Route path='events/new' component={ EventFormContainer }/>
+            <Route path='events/:eventId' component={ EventPageContainer }/>
           {/*
-          //   <IndexRoute component={ GroupPageContentContainer } />
           //   <Route path='edit' component={ GroupEditContainer }/>
           //   <Route path='calendar' component={ GroupCalendarContainer } />
-          //   <Route path='events/:eventId' component={ EventPageContainer }/>
           */}
           </Route>
         </Route>
