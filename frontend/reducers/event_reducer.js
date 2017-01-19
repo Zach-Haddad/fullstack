@@ -1,13 +1,13 @@
-import { merge } from 'lodash';
-import {RECEIVE_EVENT, RECEIVE_EVENTS, RECEIVE_EVENT_ERRORS} from '../actions/event_actions';
+import {RECEIVE_EVENTS} from '../actions/event_actions';
 
-const EventReducer = () => {
+const EventReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
-    case RECEIVE_EVENT:
     case RECEIVE_EVENTS:
-    case RECEIVE_EVENT_ERRORS:
+      return action.events;
     default:
-
+      return state;
   }
-}
+};
+
+export default EventReducer;

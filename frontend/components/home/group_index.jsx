@@ -13,12 +13,17 @@ class GroupIndex extends Component {
 
   render() {
     const { groups, children } = this.props;
+    let groupList;
+    if (groups[0]){
+      groupList = groups.map(group => (
+        <GroupIndexItem key={group.id} group={group} />
+        )
+      );
+    }
     return (
       <section className="group-list">
         <ul>I'm here!</ul>
-        <ul>
-          {groups.map(group => <GroupIndexItem key={group.id} group={group} />)}
-        </ul>
+        {groupList}
         {children}
       </section>
     );

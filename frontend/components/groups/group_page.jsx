@@ -54,6 +54,10 @@ class GroupPage extends React.Component {
     }
   }
 
+  createEventButton(){
+
+  }
+
   render(){
     const { group, children } = this.props;
     if (group.members === undefined){
@@ -74,6 +78,7 @@ class GroupPage extends React.Component {
             </ul>
           </aside>
           {children}
+          <Link to='/home'>Back to Homepage</Link>
         </div>
       );
     }

@@ -2,7 +2,7 @@ import * as APIUtil from '../util/event_api_util';
 
 export const RECEIVE_EVENT = "RECEIVE_EVENT";
 export const RECEIVE_EVENTS = "RECEIVE_EVENTS";
-export const RECEIVE_EVENT_ERRORS = "RECEIVE_EVENT_ERRORS";
+export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 // acs
 
 export const receiveEvents = (events) => ({
@@ -15,8 +15,8 @@ export const receiveEvent = (event) => ({
   event
 });
 
-export const receiveEventErrors = (errors) => ({
-  type: RECEIVE_EVENT_ERRORS,
+export const receiveErrors = (errors) => ({
+  type: RECEIVE_ERRORS,
   errors
 });
 
@@ -31,13 +31,18 @@ export const fetchEvent = (id) => dispatch => (
     .then(event => dispatch(receiveEvent(event)))
 );
 
-export const addUserToEvent = (data) => (
+// export const addUserToEvent = (data) => (
+//
+// export const removeUserFromEvent = (id) => (
 
+export const createEvent = (event, groupId) => dispatch => (
+  APIUtil.createEvent(event, groupId)
+    .then(
+      newEvent => dispatch(receiveEvent(newEvent)),
+      err => dispatch(receiveErrors(err.responseJSON))
+    )
+  );
 
-export const removeUserFromEvent = (id) => (
-
-export const createEvent = (event, groupId) => (
-
-export const editEvent = (event) => (
-
-export const deleteEvent = (id) => (
+// export const editEvent = (event) => (
+//
+// export const deleteEvent = (id) => (

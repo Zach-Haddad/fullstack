@@ -1,11 +1,11 @@
-export const fetchGroups = () => (
+export const fetchGroups = (data) => (
   $.ajax({
     method: "GET",
-    url: `api/groups`
+    url: `api/groups`,
+    data
   })
 );
-
-// add filter into this
+// data is filters
 
 export const fetchGroup = (groupId) => (
   $.ajax({

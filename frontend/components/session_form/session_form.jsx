@@ -9,7 +9,10 @@ class SessionForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
 	}
 
-	componentDidUpdate() {
+	componentDidUpdate(nextProps) {
+    if (this.props.route.path !== nextProps.route.path){
+      this.props.clearErrors();
+    }
 		this.redirectIfLoggedIn();
 	}
 
@@ -42,7 +45,7 @@ class SessionForm extends React.Component {
   renderErrors() {
      if(this.props.errors){
        return(
-         <ul className='errors'>
+         <ul className='auth-errors'>
            {this.props.errors.map((error, i) => (
              <li key={`error-${i}`}>
                {error}

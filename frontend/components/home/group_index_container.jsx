@@ -4,7 +4,7 @@ import { fetchGroups } from '../../actions/group_actions';
 
 const mapStateToProps = ( state ) => ({
   currentUser: state.session.currentUser,
-  groups: state.groups.groups
+  groups: state.groups
 });
 
 const mapDispatchToProps = (dispatch) => ({

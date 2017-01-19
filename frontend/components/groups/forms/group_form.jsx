@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter, Link } from 'react-router';
+import { withRouter, Link, hashHistory } from 'react-router';
 import { merge } from 'lodash';
 
 class groupForm extends React.Component {
@@ -7,39 +7,52 @@ class groupForm extends React.Component {
     super(props);
     this.state = {
       name: "",
-      description: ""
+      description: "",
+      // group_owner_id: this.props.currentUserId
     };
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
+  }
+
+  componentDidMount(){
+    debugger
+    this.props.clearErrors();
   }
 
   handleSubmit(e) {
-  e.preventDefault();
-  const newGroup = merge({}, this.state, {group_owner_id: this.props.currentUserId});
-  this.props.createGroup(newGroup)
-    .then(data => {
-      this.props.router.push(`/groups/${data.group.id}`);});
+    debugger
+    e.preventDefault();
+    // const ownerId = this.props.currentUserId;
+    // const newGroup = merge({}, this.state, {group_owner_id: ownerId});
+    this.props.createGroup(this.state)
+      .then(data => {
+        hashHistory.push(`/groups/${data.group.id}`);});
   }
 
   update(property) {
     return e => this.setState({ [property]: e.target.value });
   }
 
-  errors() {
-   if (this.props.errors) {
-     return (
-       this.props.errors.map(error => {
-         return (<li className="error" key={error}>{error}</li>);
-       })
-     );
+  renderErrors() {
+     if(this.props.errors){
+       return(
+         <ul className='group-errors'>
+           {this.props.errors.map((error, i) => (
+             <li key={`error-${i}`}>
+               {error}
+             </li>
+           ))}
+         </ul>
+       );
+     }
    }
-  }
 
   render(){
     return (
       <section className="group-form-container">
         <ul>
-          {this.errors()}
+          {this.renderErrors()}
         </ul>
         <form className="group-form" onSubmit={this.handleSubmit}>
           <label>What is the name of your group?</label>
@@ -50,7 +63,6 @@ class groupForm extends React.Component {
               value={this.state.name}
               placeholder="Name"
               onChange={this.update('name')}
-              required
             />
           <br />
           <br />
@@ -62,7 +74,6 @@ class groupForm extends React.Component {
               value={this.state.description}
               placeholder="Description"
               onChange={this.update('description')}
-              required
             />
           <br />
           <br />
