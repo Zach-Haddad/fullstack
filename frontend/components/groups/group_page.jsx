@@ -53,21 +53,31 @@ class GroupPage extends React.Component {
       }
     }
   }
-  // just show a button to delete the group if you are the owner
 
   render(){
     const { group, children } = this.props;
-    return(
-      <div className="group-page">
-        <div className="group-page-header">
-          <h1>{group.name}</h1>
-          <p>{group.description}</p>
-          <p>{this.joinToggleButton()}</p>
+    if (group.members === undefined){
+      return (<div></div>);
+    } else {
+      return(
+        <div className="group-page">
+          <div className="group-page-header">
+            <h1>{group.name}</h1>
+            <p>{group.description}</p>
+            <p>{this.joinToggleButton()}</p>
+          </div>
+          <aside className="group-page-sidebar">
+            <ul>
+              <li>Number of members: {group.members.length}</li>
+              <li>Group Since: {Date(group.created_at).slice(4, 15)}</li>
+            </ul>
+          </aside>
+          {children}
         </div>
-        {children}
-      </div>
-    );
+      );
+    }
   }
 }
+
 
 export default GroupPage;

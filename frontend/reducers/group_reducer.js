@@ -15,7 +15,8 @@ const GroupReducer = (state = _nullGroups, action) => {
   switch (action.type) {
     case RECEIVE_GROUPS:
       const groups = action.groups;
-      return merge({}, state, { groups });
+      const newVar = merge({}, state.errors, { groups });
+      return newVar;
     case RECEIVE_GROUP_ERRORS:
       const errors = action.errors;
       return merge({}, state, { errors });

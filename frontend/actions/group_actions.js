@@ -61,7 +61,7 @@ export const editGroup = (group) => dispatch => (
 export const deleteGroup = (groupId) => dispatch => (
   APIUtil.deleteGroup(groupId)
     .then(
-      group => dispatch(removeGroup(group)),
+      (groups) => dispatch(receiveGroups(groups)),
       err => dispatch(receiveGroupErrors(err.responseJSON))
     )
     .then(hashHistory.push('/home'))
