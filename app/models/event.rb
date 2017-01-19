@@ -5,16 +5,17 @@
 #  id             :integer          not null, primary key
 #  name           :string           not null
 #  group_id       :integer          not null
-#  time           :datetime         not null
 #  location       :string           not null
 #  description    :text             not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #  event_owner_id :integer          not null
+#  date           :date             not null
+#  time           :time             not null
 #
 
 class Event < ActiveRecord::Base
-  validates :name, :group_id, :time, :location, :description, presence: true
+  validates :name, :date, :event_owner_id, :group_id, :time, :location, :description, presence: true
 
   has_many :rsvps
   has_many :attendees, through: :rsvp, source: :user
@@ -23,7 +24,7 @@ class Event < ActiveRecord::Base
 
   belongs_to :owner,
   primary_key: :id,
-  foreign_key: :group_owner_id,
+  foreign_key: :event_owner_id,
   class_name: "User"
   #
   # def self.find_user_events(user_id)

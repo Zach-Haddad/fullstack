@@ -16,12 +16,10 @@ class groupForm extends React.Component {
   }
 
   componentDidMount(){
-    debugger
     this.props.clearErrors();
   }
 
   handleSubmit(e) {
-    debugger
     e.preventDefault();
     // const ownerId = this.props.currentUserId;
     // const newGroup = merge({}, this.state, {group_owner_id: ownerId});

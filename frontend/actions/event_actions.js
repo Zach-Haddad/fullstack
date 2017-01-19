@@ -35,8 +35,8 @@ export const fetchEvent = (id) => dispatch => (
 //
 // export const removeUserFromEvent = (id) => (
 
-export const createEvent = (event, groupId) => dispatch => (
-  APIUtil.createEvent(event, groupId)
+export const createEvent = (event) => dispatch => (
+  APIUtil.createEvent(event)
     .then(
       newEvent => dispatch(receiveEvent(newEvent)),
       err => dispatch(receiveErrors(err.responseJSON))

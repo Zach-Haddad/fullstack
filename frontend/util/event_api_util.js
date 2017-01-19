@@ -12,12 +12,6 @@ export const fetchEvent = (id) => (
   })
 );
 
-// filters
-// export const fetchUserEvents
-// export const fetchGroupEvents
-// export const fetchEventUsers
-
-
 export const addUserToEvent = (data) => (
   $.ajax({
     method: 'POST',
@@ -34,13 +28,18 @@ export const removeUserFromEvent = (id) => (
   })
 );
 
-export const createEvent = (event, groupId) => (
-  $.ajax({
-    method: 'POST',
-    url: `api/groups/${groupId}/events/${event.id}`,
-    data: { event }
-  })
-);
+export const createEvent = (event) => {
+  debugger
+  return(
+    $.ajax({
+      method: 'POST',
+      url: `api/groups/${event.group_id}/events`,
+      data: { event }
+    })
+
+  );
+};
+
 
 export const editEvent = (event) => (
   $.ajax({

@@ -1,7 +1,7 @@
 class Api::EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
-    @event.group_id = params[:group_id]
+
     if @event.save
       Rsvp.create(event_id: @event.id, user_id: current_user.id)
       render json: @event
@@ -40,7 +40,7 @@ class Api::EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :group_id, :time, :location, :description)
+    params.require(:event).permit(:name, :event_owner_id, :date, :group_id, :time, :location, :description)
   end
 
 end
