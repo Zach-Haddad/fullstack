@@ -7,8 +7,8 @@
   flex-direction: row;
   justify-content: space-between;
   // background: linear-gradient(#130320, white);
-  border-bottom: 8px solid $dark-blue;
-  border-top: 8px solid $dark-blue;
+  border-bottom: 10px solid $dark-blue;
+  border-top: 10px solid $dark-blue;
   background-color: $darkest-blue;
 }
 
@@ -27,14 +27,14 @@
   background: $blue;
   height: 40px;
   border-radius: 10px;
-  border-color: 10px solid $light-blue;
+  border-color: 10px solid $lightest-blue;
   font-family: $firac;
   font-size: 15px;
   color: $lightest-blue;
 }
 
 .nav-session-buttons button:hover, .nav-options button:hover {
-  background: $darkest-blue;
+  background: $dark-blue;
   cursor: pointer;
 }
 
@@ -61,6 +61,7 @@
   width: 40px;
   background-size: 100%;
   display:inline-block;
+  margin-right: -10px;
 }
 
 .logo-name{

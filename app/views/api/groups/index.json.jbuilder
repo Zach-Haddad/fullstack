@@ -1,1 +1,1 @@
-json.array! @groups, :id, :name, :description
+json.array! @groups, :id, :name, :description, :members

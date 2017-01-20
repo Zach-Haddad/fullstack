@@ -10,12 +10,35 @@
   align-content: center;
   text-align: center;
   margin: auto;
-  background-color: $light-gray;
+  background-color: $darkest-blue;
   padding: 50px;
   margin-bottom: 20px;
   border-radius: 10px;
+  border: 15px solid $dark-blue;
+  color: $lightest-blue
 }
 
-button:hover {
-  background: DarkSlateGray;
+.group-form a{
+  color: $light-beige;
+}
+
+.group-form a:hover {
+  color: $beige;
+  cursor: pointer;
+}
+
+.group-form button {
+  margin-top: 10px;
+  font: $firac;
+  font-size: 20px;
+  width: 70%;
+  padding: 5px;
+  background-color: $light-blue;
+  color: $darkest-blue;
+  border-radius: 10px;
+}
+
+.group-form button:hover {
+  background: $lightest-blue;
+  cursor: pointer;
 }

@@ -22,16 +22,14 @@ class Home extends React.Component{
 
     const userGroups = this.props.currentUser.groups;
     const userGroupList = (userGroups[0] ? (
-      <div className='user-group-list'>
-        <div className='user-groups'>
+        <div className='user-groups-container'>
           <GroupIndexContainer />
         </div>
-      </div>
     ) : null);
 
     return(
-      <div>
-        <p>home page content</p>
+      <div className='home-container'>
+        <p></p>
         <SearchContainer />
         <div>
           {userGroupList}
@@ -43,6 +41,8 @@ class Home extends React.Component{
 }
 
 export default withRouter(Home);
+
+// refactor above for expanded search options in the future!
 
 // Fix this later:
 

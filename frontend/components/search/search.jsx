@@ -43,7 +43,7 @@ class Search extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className= 'search-container'>
         <form className='search'>
           <input
             value={this.state.filter}
@@ -51,11 +51,13 @@ class Search extends React.Component {
             type='text'
             placeholder='Find a Group!'
             onChange={this.update('filter')} />
-          <button onClick={this.handleSubmit}> Search </button>
+          <div className='search-buttons'>
+            <button onClick={this.handleSubmit}> Search </button>
+            <button onClick={this.handleUserGroups}>My Groups</button>
+            <button onClick={this.handleAllGroups}>All Groups</button>
+          </div>
         </form>
 
-        <button onClick={this.handleUserGroups}>My Groups</button>
-        <button onClick={this.handleAllGroups}>All Groups</button>
       </div>
 
     );
