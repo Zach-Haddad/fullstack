@@ -29,7 +29,6 @@ export const removeUserFromEvent = (id) => (
 );
 
 export const createEvent = (event) => {
-  debugger
   return(
     $.ajax({
       method: 'POST',

@@ -22,7 +22,6 @@ class GroupIndex extends Component {
     }
     return (
       <section className="group-list">
-        <ul>I'm here!</ul>
         {groupList}
         {children}
       </section>

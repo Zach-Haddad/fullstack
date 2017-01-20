@@ -36,44 +36,42 @@ class SessionForm extends React.Component {
 
 	navLink() {
 		if (this.props.formType === "login") {
-			return <Link to="/welcome/signup">sign up instead</Link>;
+			return (
+        <p className='auth-text'>Not a member? <Link to="/welcome/signup">Sign up here</Link></p>);
 		} else {
-			return <Link to="/welcome/login">log in instead</Link>;
+			return (
+        <p className='auth-text'>Already a member? <Link to="/welcome/login">Log in here</Link></p>);
 		}
 	}
 
   renderErrors() {
      if(this.props.errors){
        return(
-         <ul className='auth-errors'>
+         <div className='auth-errors'>
            {this.props.errors.map((error, i) => (
-             <li key={`error-${i}`}>
+             <p key={`error-${i}`}>
                {error}
-             </li>
+             </p>
            ))}
-         </ul>
+         </div>
        );
      }
    }
 
 	render() {
 		// add in later! discipline, etc
-		const newUserForms = () => {
-			if (this.props.formType === "signup"){
-				return (<p>additional signup params here</p>);
-			}
-		};
+		// const newUserForms = () => {
+		// 	if (this.props.formType === "signup"){
+		// 		return (<p>additional signup params here</p>);
+		// 	}
+		// };
 
 		return (
 			<div className="login-form-container">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-					Welcome to TrekMates!
-					<br/>
-					Please {this.props.formType} or {this.navLink()}
+					<h2>Welcome to TrekMates!</h2>
 					<div className="login-form">
             {this.renderErrors()}
-						<br/>
-						{newUserForms()}
 						<br/>
 						<label> Username:
 							<input type="text"
@@ -91,6 +89,9 @@ class SessionForm extends React.Component {
 						<br/>
             <br/>
 						<input className="submit-button" type="submit" value="Submit" />
+            <br/>
+            <br/>
+            {this.navLink()}
 					</div>
 				</form>
 			</div>

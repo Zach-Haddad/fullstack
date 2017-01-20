@@ -1,0 +1,25 @@
+.group-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.group-page-header {
+  width: 80%;
+  border: 1px solid black;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.group-page-body {
+  display: flex;
+  flex-direction: row;
+  min-height: 400px;
+}
+
+.group-page-sidebar {
+  border: 1px solid black;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  height: auto;
+}

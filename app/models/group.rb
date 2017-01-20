@@ -15,7 +15,7 @@ class Group < ActiveRecord::Base
   validates :name, uniqueness: true
 
   has_many :memberships
-  has_many :events
+  has_many :events, dependent: :destroy
 
   has_many :members, through: :memberships, source: :member
 

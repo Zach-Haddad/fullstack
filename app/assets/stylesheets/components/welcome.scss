@@ -30,19 +30,26 @@
 
 .login-form-box {
   font-family: $fira;
-  border: 5px solid white;
+  border: 9px solid white;
   position: absolute;
   background-color: $light-gray;
   opacity: 0.8;
-  left: 66%;
+  left: 56%;
   top: 30%;
-  padding: 40px;
+  padding: 60px;
   border-radius: 10px;
   text-align: center;
 }
 
 .login-form input {
   margin-top: 5px;
+}
+
+.auth-errors{
+  text-align: center;
+  list-style: none;
+  font-weight: bold;
+  color: blue;
 }
 
 .submit-button {

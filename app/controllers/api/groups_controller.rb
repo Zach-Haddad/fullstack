@@ -18,10 +18,13 @@ class Api::GroupsController < ApplicationController
 
   def index
     @groups = Group.all
+    # @groups = Group.(where groups.members.include (current_user))
+    # if params[:filter]
+    #   @groups = @groups.where(group.name like param filter)
+    # end
     render "api/groups/index"
-    # temporary, need to implement search here
   end
-  
+
   # if params[:search]
   #   Group.find(group.name like search_term)
   # else

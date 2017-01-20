@@ -4,6 +4,7 @@
   background-color: black;
   color: white;
   opacity: 0.95;
+  padding-bottom: 35px;
 
   display: flex;
   flex-direction: column;
@@ -21,8 +22,8 @@
 
 .footer-logo {
   background: url(http://res.cloudinary.com/zach/image/upload/v1484254661/mountain-3-512_vpzuc8.png);
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
   background-size: 100%;
   display:inline-block;
 }
