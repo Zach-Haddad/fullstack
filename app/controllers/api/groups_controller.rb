@@ -18,7 +18,6 @@ class Api::GroupsController < ApplicationController
 
   def index
     @groups = current_user.groups
-    # by default
 
     if params[:filter] == "//user"
       @groups = current_user.groups
@@ -29,11 +28,6 @@ class Api::GroupsController < ApplicationController
     end
     render "api/groups/index"
   end
-
-  # if params[:search]
-  #   Group.find(group.name like search_term)
-  # else
-  #   find all groups where member is the current user id (my groups)
 
   def update
     @group = Group.find(params[:id])

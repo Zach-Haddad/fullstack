@@ -20,7 +20,7 @@ class GroupPageContent extends React.Component{
         <div className='group-events-header'>Events:</div>
         <EventIndexContainer group={group} />
       </ul>
-    ) : null);
+    ) : <div className='group-events-blank'>No Current Events</div>);
     return (
       <div className='group-events'>
         {events}

@@ -1,0 +1,36 @@
+
+.event-form {
+  background-color: $darkest-blue;
+  padding: 50px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 15px solid $dark-blue;
+  color: $lightest-blue;
+  font-family: $firac;
+  width: 100%;
+}
+
+.event-form button {
+  margin-top: 10px;
+  font: $firac;
+  font-size: 20px;
+  width: 70%;
+  padding: 5px;
+  background-color: $light-blue;
+  color: $darkest-blue;
+  border-radius: 10px;
+}
+
+.event-form button:hover {
+  background: $lightest-blue;
+  cursor: pointer;
+}
+
+.event-form a {
+  color: $light-blue;
+  text-decoration: none;
+}
+
+.event-form a:hover {
+  color: $lightest-blue;
+}

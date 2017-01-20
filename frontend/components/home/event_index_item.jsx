@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const EventIndexItem = ({event, groupId, router}) => {
   return(
-    <li className="group-index-item">
+    <li className="event-index-item">
       <Link to={`/groups/${groupId}/events/${event.id}`}>
         <p>{event.name}</p>
         <p>{event.description}</p>

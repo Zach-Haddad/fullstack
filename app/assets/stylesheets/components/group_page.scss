@@ -5,15 +5,40 @@
 
 .group-page-header {
   width: 80%;
-  border: 1px solid black;
   margin: 0 auto;
   margin-top: 20px;
+  font-family: $firac;
+  background-color: $darkest-blue;
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 15px solid $dark-blue;
+  color: $lightest-blue;
+  text-align: center;
+}
+
+.group-page-header button {
+  margin-top: 10px;
+  font: $firac;
+  font-size: 20px;
+  width: 40%;
+  padding: 5px;
+  background-color: $light-blue;
+  color: $darkest-blue;
+  border-radius: 10px;
+}
+
+.group-page-header button:hover {
+  background: $lightest-blue;
+  cursor: pointer;
 }
 
 .group-page-body {
   display: flex;
   flex-direction: row;
   min-height: 400px;
+  width: 80%;
+  justify-content: center;
 }
 
 .group-page-sidebar {
@@ -22,4 +47,9 @@
   padding: 20px;
   text-align: center;
   height: auto;
+  justify-content: left;
+}
+
+.group-page-right  {
+  width: 40%;
 }

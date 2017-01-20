@@ -20,7 +20,7 @@ class EventIndex extends Component {
       );
     }
     return (
-      <section className="group-list">
+      <section className="group-event-list">
         <ul>I'm here!</ul>
         {eventList}
         {children}
