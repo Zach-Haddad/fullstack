@@ -46,7 +46,6 @@ const Root = ({ store }) => {
           </Route>
 
           <Route path="home" component={ HomeContainer } onEnter={_ensureLoggedIn}>
-            <Route path='groups' component={ GroupIndexContainer }/>
             {/*
             <Route path='search' component={ SearchContainer }/>
             <Route path='events' component={ EventIndexContainer }/>

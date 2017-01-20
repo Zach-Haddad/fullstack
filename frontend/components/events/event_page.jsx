@@ -44,7 +44,7 @@ class EventPage extends React.Component {
   render(){
     debugger
     const { event, children } = this.props;
-    if (event.name === undefined){
+    if (event.name === undefined || event.attendees === undefined){
       return(
         <div></div>
       );

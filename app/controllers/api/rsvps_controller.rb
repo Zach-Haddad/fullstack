@@ -9,8 +9,8 @@ class Api::RsvpsController < ApplicationController
   def create
     @rsvp = Rsvp.new(user_id: params[:user_id].to_i, event_id: params[:event_id].to_i);
     if @rsvp.save
-      @group = Group.find(params[:group_id])
-      render 'api/groups/show'
+      @event = Event.find(params[:event_id])
+      render 'api/events/show'
     else
       render json: @membership.errors.full_messages, status: 422
     end

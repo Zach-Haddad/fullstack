@@ -9,7 +9,6 @@ class GroupPageContent extends React.Component{
   }
 
   componentDidMount(){
-    debugger
     const groupId = this.props.group.id;
     this.props.fetchGroup(groupId);
   }
@@ -29,7 +28,5 @@ class GroupPageContent extends React.Component{
     );
   }
 }
-
-// need to fix rendering here
 
 export default GroupPageContent;

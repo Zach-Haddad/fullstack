@@ -34,7 +34,6 @@ class Home extends React.Component{
       <div>
         <p>home page content</p>
         <SearchContainer />
-        <Link to='home/groups'>View All Groups (Temp Index)</Link>
         <div>
           {userGroupList}
         </div>
