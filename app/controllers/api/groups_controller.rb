@@ -17,10 +17,13 @@ class Api::GroupsController < ApplicationController
   end
 
   def index
-    @groups = Group.all
-    # @groups = Group.(where groups.members.include (current_user))
+    @groups = current_user.groups
+    # by default
+
     if params[:filter] == "//user"
       @groups = current_user.groups
+    elsif params[:filter] == "//all"
+      @groups = Group.all
     elsif params[:filter]
       @groups = Group.where("name ~ ?", params[:filter])
     end

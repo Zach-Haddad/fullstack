@@ -23,9 +23,8 @@ class Home extends React.Component{
     const userGroups = this.props.currentUser.groups;
     const userGroupList = (userGroups[0] ? (
       <div className='user-group-list'>
-        <h4>My Groups</h4>
         <div className='user-groups'>
-          <GroupIndexContainer groups={userGroups} />
+          <GroupIndexContainer />
         </div>
       </div>
     ) : null);

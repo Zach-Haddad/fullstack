@@ -14,6 +14,8 @@ class Search extends React.Component {
     };
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUserGroups = this.handleUserGroups.bind(this);
+    this.handleAllGroups = this.handleAllGroups.bind(this);
   }
 
   // componentDidUpdate(){
@@ -29,7 +31,14 @@ class Search extends React.Component {
 
   handleSubmit(e){
     this.props.fetchGroups(this.state);
-    debugger
+  }
+
+  handleUserGroups(e){
+    this.props.fetchGroups({filter: '//user'});
+  }
+
+  handleAllGroups(e){
+    this.props.fetchGroups({filter: '//all'});
   }
 
   render() {
@@ -42,8 +51,11 @@ class Search extends React.Component {
             type='text'
             placeholder='Find a Group!'
             onChange={this.update('filter')} />
+          <button onClick={this.handleSubmit}> Search </button>
         </form>
-        <button onClick={this.handleSubmit}> Search </button>
+
+        <button onClick={this.handleUserGroups}>My Groups</button>
+        <button onClick={this.handleAllGroups}>All Groups</button>
       </div>
 
     );
