@@ -21,10 +21,11 @@ export const addUserToEvent = (data) => (
 );
 
 
-export const removeUserFromEvent = (id) => (
+export const removeUserFromEvent = (data) => (
   $.ajax({
     method: 'DELETE',
-    url: `api/rsvps/${id}`,
+    url: `api/rsvps`,
+    data
   })
 );
 

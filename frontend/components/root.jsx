@@ -55,7 +55,7 @@ const Root = ({ store }) => {
 
           <Route path='add_group' component={ GroupFormContainer }/>
 
-          <Route path='groups/:groupId' component={ GroupPageContainer }>
+          <Route path='groups/:groupId' component={ GroupPageContainer } onEnter={_ensureLoggedIn}>
             <IndexRoute component={ GroupPageContentContainer } />
             <Route path='events/new' component={ EventFormContainer }/>
             <Route path='events/:eventId' component={ EventPageContainer }/>

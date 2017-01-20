@@ -23,7 +23,7 @@ class eventForm extends React.Component {
     e.preventDefault();
     this.props.createEvent(this.state)
       .then(data => {
-        hashHistory.push(`/groups/${this.state.groupId}`);});
+        hashHistory.push(`/groups/${this.props.currentGroupId}`);});
   }
 
   update(property) {

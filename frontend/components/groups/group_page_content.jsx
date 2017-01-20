@@ -24,4 +24,6 @@ class GroupPageContent extends React.Component{
   }
 }
 
+// need to fix rendering here
+
 export default GroupPageContent;

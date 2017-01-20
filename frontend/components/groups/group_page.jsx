@@ -9,6 +9,7 @@ class GroupPage extends React.Component {
     this.removeUserFromGroup = this.removeUserFromGroup.bind(this);
     // this.editGroup = this.editGroup.bind(this);
     this.deleteGroup = this.deleteGroup.bind(this);
+    this.createEventButton = this.createEventButton.bind(this);
   }
 
   componentDidMount() {
@@ -16,6 +17,7 @@ class GroupPage extends React.Component {
   }
 
   addUserToGroup(){
+    debugger
     this.props.addUserToGroup({group_id: this.props.group.id, member_id: this.props.currentUser.id})
   }
 
@@ -27,6 +29,7 @@ class GroupPage extends React.Component {
     this.props.deleteGroup(this.props.group.id)
       .then(() => this.props.router.push("/home"));
   }
+
 
   joinToggleButton(){
     if (this.props.group.members){
@@ -44,9 +47,12 @@ class GroupPage extends React.Component {
   }
 
   createEventButton(){
-
+    if (this.props.group.memberIds.includes(this.props.currentUser.id)){
+      return(
+        <p><button><Link to={`groups/${this.props.group.id}/events/new`}>Add an Event!</Link></button></p>
+      );
+    }
   }
-  // only if member
 
   render(){
     const { group, children } = this.props;
@@ -66,7 +72,7 @@ class GroupPage extends React.Component {
               <p>Group Since: {Date(group.created_at).slice(4, 15)}</p>
               <p>Created By: {group.owner.username}</p>
               <p>Number of members: {group.members.length}</p>
-              <p><button><Link to={`groups/${group.id}/events/new`}>Add an Event!</Link></button></p>
+              {this.createEventButton()}
           </aside>
 
           <div className="group-page-right">
