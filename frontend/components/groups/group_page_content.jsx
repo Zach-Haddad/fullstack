@@ -8,6 +8,12 @@ class GroupPageContent extends React.Component{
     super(props);
   }
 
+  componentDidMount(){
+    debugger
+    const groupId = this.props.group.id;
+    this.props.fetchGroup(groupId);
+  }
+
   render(){
     const group = this.props.group;
     const events = (this.props.group.events[0] ? (

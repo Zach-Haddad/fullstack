@@ -42,6 +42,7 @@ class EventPage extends React.Component {
   }
 
   render(){
+    debugger
     const { event, children } = this.props;
     if (event.name === undefined){
       return(

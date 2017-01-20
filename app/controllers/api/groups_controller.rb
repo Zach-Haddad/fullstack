@@ -19,9 +19,9 @@ class Api::GroupsController < ApplicationController
   def index
     @groups = Group.all
     # @groups = Group.(where groups.members.include (current_user))
-    # if params[:filter]
-    #   @groups = @groups.where(group.name like param filter)
-    # end
+    if params[:filter]
+      @groups = Group.where("name ~ ?", params[:filter])
+    end
     render "api/groups/index"
   end
 

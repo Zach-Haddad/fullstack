@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter, hashHistory } from 'react-router';
 import GroupIndexContainer from './group_index_container';
 import EventIndexContainer from './event_index_container';
+import SearchContainer from '../search/search_container';
 
 class Home extends React.Component{
   constructor(props){
@@ -32,6 +33,7 @@ class Home extends React.Component{
     return(
       <div>
         <p>home page content</p>
+        <SearchContainer />
         <Link to='home/groups'>View All Groups (Temp Index)</Link>
         <div>
           {userGroupList}

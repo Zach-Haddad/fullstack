@@ -17,7 +17,6 @@ class GroupPage extends React.Component {
   }
 
   addUserToGroup(){
-    debugger
     this.props.addUserToGroup({group_id: this.props.group.id, member_id: this.props.currentUser.id})
   }
 

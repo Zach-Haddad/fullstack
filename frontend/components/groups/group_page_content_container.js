@@ -1,6 +1,7 @@
 // list of events
 import {connect} from 'react-redux';
 import GroupPageContent from './group_page_content';
+import { fetchGroup } from '../../actions/group_actions';
 
 const mapStateToProps = state => ({
   group: state.groupDetail,
@@ -8,7 +9,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-
+  fetchGroup: (id) => dispatch(fetchGroup(id))
 });
 
 export default connect(
