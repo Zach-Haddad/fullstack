@@ -1,3 +1,7 @@
+body{
+  background-color: $beige;
+}
+
 .hero-frame {
   max-width: 100%;
   min-width: 10px;
@@ -29,20 +33,25 @@
 }
 
 .login-form-box {
-  font-family: $fira;
-  border: 9px solid white;
+  font-family: $firac;
+  border: 9px solid $dark-blue;
   position: absolute;
-  background-color: $light-gray;
-  opacity: 0.8;
+  background-color: $darkest-blue;
+  opacity: 0.9;
   left: 56%;
   top: 30%;
   padding: 60px;
   border-radius: 10px;
   text-align: center;
+  color: $lightest-blue;
 }
 
 .login-form input {
-  margin-top: 5px;
+  margin-top: 10px;
+}
+
+.login-form label input {
+  margin-left: 10px;
 }
 
 .auth-errors{
@@ -54,9 +63,27 @@
 
 .submit-button {
   margin-top: 10px;
+  font: $firac;
+  font-size: 20px;
   width: 70%;
+  padding: 5px;
+  background-color: $light-blue;
+  color: $darkest-blue;
+}
+
+.auth-text {
+  color: $lightest-blue
+}
+
+.auth-link {
+  color: $light-beige;
+}
+
+.auth-link:hover {
+  color: $beige;
 }
 
 .submit-button:hover {
-  background: DarkSlateGrey;
+  background: $lightest-blue;
+  cursor: pointer;
 }

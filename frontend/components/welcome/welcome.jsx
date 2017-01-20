@@ -15,7 +15,7 @@ class Welcome extends React.Component{
         <div className="hero-frame">
           <div className="hero-content">
             <div className="hero-text">
-              <p>Inspirational quote, join my site, etc</p>
+              <p>Find Local Athletes For Your Next Outdoor Adventure</p>
             </div>
 
             <div className="hero-buttons"></div>

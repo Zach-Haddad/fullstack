@@ -7,8 +7,9 @@
   flex-direction: row;
   justify-content: space-between;
   // background: linear-gradient(#130320, white);
-  border-bottom: 1px solid $light-gray;
-  border-top: 1px solid $light-gray;
+  border-bottom: 8px solid $dark-blue;
+  border-top: 8px solid $dark-blue;
+  background-color: $darkest-blue;
 }
 
 .nav-session-buttons, .nav-options {
@@ -23,22 +24,24 @@
   margin-left: 30px;
   display: inline-block;
   padding: 10px;
-  background: $light-gray;
+  background: $blue;
   height: 40px;
   border-radius: 10px;
-  font-family: $fira;
+  border-color: 10px solid $light-blue;
+  font-family: $firac;
   font-size: 15px;
+  color: $lightest-blue;
 }
 
 .nav-session-buttons button:hover, .nav-options button:hover {
-  background: DarkSlateGrey;
+  background: $darkest-blue;
+  cursor: pointer;
 }
 
 
 .left-nav {
   align-items: center;
   padding-right: 20px;
-  border-right: 1px solid $light-gray;
 }
 
 .left-nav h1{
@@ -49,12 +52,13 @@
 
 .logo {
   background: url(http://res.cloudinary.com/zach/image/upload/v1484254661/mountain-3-512_vpzuc8.png);
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   background-size: 100%;
   display:inline-block;
 }
 
 .logo-name{
   font-family: $megrim;
+  color: $lightest-blue;
 }
