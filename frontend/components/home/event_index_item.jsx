@@ -6,8 +6,8 @@ const EventIndexItem = ({event, groupId, router}) => {
     <li className="event-index-item">
       <Link to={`/groups/${groupId}/events/${event.id}`}>
         <p>{event.name}</p>
-        <p>{event.description}</p>
       </Link>
+      <p>{event.description}</p>
     </li>
   );
 };

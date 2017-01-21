@@ -2,7 +2,6 @@ group-form-container{
   display: flex;
   flex-direction: column;
   width: 100%;
-  font-family: $fira;
 }
 
 .group-form {
@@ -15,7 +14,9 @@ group-form-container{
   margin-bottom: 20px;
   border-radius: 10px;
   border: 15px solid $dark-blue;
-  color: $lightest-blue
+  color: $lightest-blue;
+  font-family: $fira;
+  width: 50%;
 }
 
 .group-form a{

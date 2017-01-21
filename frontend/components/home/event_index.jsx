@@ -21,7 +21,7 @@ class EventIndex extends Component {
     }
     return (
       <section className="group-event-list">
-        <ul>I'm here!</ul>
+        <h3>Current Events</h3>
         {eventList}
         {children}
       </section>

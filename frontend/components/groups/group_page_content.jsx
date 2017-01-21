@@ -17,7 +17,6 @@ class GroupPageContent extends React.Component{
     const group = this.props.group;
     const events = (this.props.group.events[0] ? (
       <ul>
-        <div className='group-events-header'>Events:</div>
         <EventIndexContainer group={group} />
       </ul>
     ) : <div className='group-events-blank'>No Current Events</div>);

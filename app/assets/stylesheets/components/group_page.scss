@@ -17,7 +17,7 @@
   text-align: center;
 }
 
-.group-page-header button {
+.group-page-header button{
   margin-top: 10px;
   font: $firac;
   font-size: 20px;
@@ -28,7 +28,20 @@
   border-radius: 10px;
 }
 
-.group-page-header button:hover {
+.group-page-sidebar p button {
+  width: 50%;
+  font: $firac;
+  background-color: $light-blue;
+  color: $darkest-blue;
+  border-radius: 10px;
+}
+
+.group-page-sidebar a {
+  text-decoration: none;
+  color: $darkest-blue;
+}
+
+.group-page-header button:hover, .group-page-sidebar p button:hover {
   background: $lightest-blue;
   cursor: pointer;
 }
@@ -42,12 +55,14 @@
 }
 
 .group-page-sidebar {
-  border: 1px solid black;
+  border: 3px solid $darkest-blue;
+  background-color: $dark-blue;
   margin: 20px;
   padding: 20px;
   text-align: center;
   height: auto;
   justify-content: left;
+  color: $white-blue;
 }
 
 .group-page-right  {
