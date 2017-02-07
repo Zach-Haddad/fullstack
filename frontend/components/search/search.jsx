@@ -42,6 +42,7 @@ class Search extends React.Component {
   }
 
   render() {
+    debugger
     return(
       <div className= 'search-container'>
         <form className='search'>

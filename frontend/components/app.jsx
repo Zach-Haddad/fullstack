@@ -9,8 +9,10 @@ const App = ({ children }) => (
     <header>
       <GreetingContainer />
     </header>
-
-    { children }
+    
+    <div className="page">
+      { children }
+    </div>
 
   <Footer />
   </div>
