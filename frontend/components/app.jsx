@@ -5,11 +5,11 @@ import Footer from './footer/footer';
 
 
 const App = ({ children }) => (
-  <div>
+  <div className="page-background">
     <header>
       <GreetingContainer />
     </header>
-    
+
     <div className="page">
       { children }
     </div>

@@ -1,0 +1,33 @@
+CHECKLIST
+
+- error when logging out
+Uncaught TypeError: Cannot read property 'groups' of null
+    at Home.render (home.jsx:25)
+
+-Revise Groups
+
+-Revise Events
+
+-NEW USERS CAN'T SEE EXISTING GROUPS --- FIX!!!
+  ---groups controller; @groups should be all groups by default!
+
+-----LOGIN/SIGNUP MODALS to accommodate video!
+
+-Add photos to groups and users
+
+-Add user profile page
+
+-Add calendar for groups
+
+
+
+IMPROVE YOUR SEARCH
+- groups
+  - all
+  - my groups
+  - owned groups
+
+- events
+  -events near me ()
+  -my group events
+  -all events
