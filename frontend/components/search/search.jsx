@@ -18,14 +18,10 @@ class Search extends React.Component {
     this.handleAllGroups = this.handleAllGroups.bind(this);
   }
 
-  // componentDidUpdate(){
-  //   this.setState({'filter': ''});
-  //   this.props.fetchGroups();
-  // }
-
   update(){
     return e => {
       this.setState({'filter': e.target.value});
+      this.props.fetchGroups(this.state);
     };
   }
 
