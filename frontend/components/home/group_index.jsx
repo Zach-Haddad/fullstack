@@ -13,7 +13,7 @@ class GroupIndex extends Component {
 
   render() {
     const { groups, children } = this.props;
-    let groupList;
+    let groupList = <h2 className="empty-groups">You do not belong to any groups.  Join or create a group!</h2>;
     if (groups[0]){
       groupList = groups.map(group => (
         <GroupIndexItem key={group.id} group={group} />
