@@ -16,6 +16,7 @@ class Api::GroupsController < ApplicationController
     render "api/groups/show"
   end
 
+# search implemented here, revisit
   def index
     @groups = current_user.groups
 
@@ -25,6 +26,8 @@ class Api::GroupsController < ApplicationController
       @groups = Group.all
     elsif params[:filter]
       @groups = Group.where("name ~ ?", params[:filter])
+    elsif params[:filter] == ""
+      @groups = user_groups
     end
     render "api/groups/index"
   end
