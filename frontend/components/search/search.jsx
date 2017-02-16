@@ -1,9 +1,3 @@
-// <form>
-//   internal state: searchTerm
-//   // onchange --> updateFilter--may not need
-//   onsubmit --> fetchGroups(filter)
-// </form>
-
 import React from 'react';
 
 class Search extends React.Component {
