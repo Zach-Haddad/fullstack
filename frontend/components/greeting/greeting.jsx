@@ -24,7 +24,7 @@ class Greeting extends React.Component {
 
   handleDemo(){
     const user = {username: 'user', password: 'password'};
-    this.props.login({user}).then( () => this.redirect(), () => console.log('i faield'));
+    this.props.login({user}).then( () => this.redirect());
   }
 
   render(){
