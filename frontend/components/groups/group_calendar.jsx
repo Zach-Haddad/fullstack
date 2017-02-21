@@ -1,11 +1,10 @@
 import React from 'react';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
+import { withRouter, hashHistory } from 'react-router';
 
 BigCalendar.momentLocalizer(moment);
 
-// make a new array of event objects abstracted from current props!
-// only keep name, new Date (constructed from date + " " + time)
 // include a link to event page!  use onSelectEvent
 
 const GroupCalendar = props => {
@@ -27,6 +26,7 @@ const GroupCalendar = props => {
   return(
     <BigCalendar
       events={events}
+      onSelectEvent={event => hashHistory.push(`/groups/${event.groupId}/events/${event.eventId}`)}
       />
   );
 };
