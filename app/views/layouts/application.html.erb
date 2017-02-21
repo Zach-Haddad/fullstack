@@ -3,13 +3,13 @@
 <head>
   <title>TrekMates</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'favicon.ico' %>
 </head>
 <body>
-
-<%= yield %>
-
+  <%= javascript_include_tag 'application' %>
+  <%= yield %>
 </body>
 </html>
+
+<!-- moved javascript_include_tag to body, fixed issue with react-big-calendar -->

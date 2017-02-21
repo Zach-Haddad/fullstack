@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import GroupCalendar from './group_calendar';
 
 class GroupPage extends React.Component {
 
@@ -55,6 +56,7 @@ class GroupPage extends React.Component {
 
   render(){
     const { group, children } = this.props;
+    debugger
     if (group.members === undefined){
       return (<div></div>);
     } else {
@@ -75,6 +77,7 @@ class GroupPage extends React.Component {
           </aside>
 
           <div className="group-page-right">
+            <GroupCalendar events={this.props.group.events}/>
             {children}
           </div>
           </div>
