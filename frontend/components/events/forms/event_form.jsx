@@ -12,7 +12,8 @@ class eventForm extends React.Component {
       time: "",
       location: "",
       group_id: this.props.currentGroupId,
-      event_owner_id: this.props.currentUserId
+      event_owner_id: this.props.currentUserId,
+      calendar_date: ""
     };
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,6 +22,7 @@ class eventForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.setState({calendar_date: new Date(this.state.date + " " + this.state.time)})
     this.props.createEvent(this.state)
       .then(data => {
         hashHistory.push(`/groups/${this.props.currentGroupId}`);});

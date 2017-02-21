@@ -56,7 +56,6 @@ class GroupPage extends React.Component {
 
   render(){
     const { group, children } = this.props;
-    debugger
     if (group.members === undefined){
       return (<div></div>);
     } else {
