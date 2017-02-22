@@ -54,6 +54,10 @@ class GroupPage extends React.Component {
     }
   }
 
+  calendarListToggleButton(){
+
+  }
+
   render(){
     const { group, children } = this.props;
     if (group.members === undefined){
@@ -76,7 +80,6 @@ class GroupPage extends React.Component {
           </aside>
 
           <div className="group-page-right">
-            <GroupCalendar events={this.props.group.events}/>
             {children}
           </div>
           </div>

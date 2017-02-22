@@ -7,28 +7,33 @@ BigCalendar.momentLocalizer(moment);
 
 // include a link to event page!  use onSelectEvent
 
-const GroupCalendar = props => {
-  let events = []
-  props.events.forEach(event => {
-    debugger
-    let newEvent = {
-      'title': event.name,
-      eventId: event.id,
-      groupId: event.group_id,
-      'allDay': true,
-      'start': new Date(event.date.split("-").join(",")),
-      'end': new Date(event.date.split("-").join(","))
-    };
-    events.push(newEvent);
-  });
+class GroupCalendar extends React.Component {
+  constructor(props){
+    super(props);
+  }
 
-  debugger
-  return(
-    <BigCalendar
-      events={events}
-      onSelectEvent={event => hashHistory.push(`/groups/${event.groupId}/events/${event.eventId}`)}
-      />
-  );
-};
+  render(){
+    let events = [];
+    this.props.group.events.forEach(event => {
+      let newEvent = {
+        'title': event.name,
+        eventId: event.id,
+        groupId: event.group_id,
+        'allDay': true,
+        'start': new Date(event.date.split("-").join(",")),
+        'end': new Date(event.date.split("-").join(","))
+      };
+      events.push(newEvent);
+    });
+
+    return(
+      <BigCalendar
+        events={events}
+        views={['month', 'week', 'day']}
+        onSelectEvent={event => this.props.router.push(`/groups/${event.groupId}/events/${event.eventId}`)}
+        />
+    );
+  }
+}
 
 export default GroupCalendar;

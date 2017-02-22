@@ -12,6 +12,7 @@ import GroupIndexContainer from './home/group_index_container';
 // import SearchContainer from './search/search_container';
 
 import GroupPageContainer from './groups/group_page_container';
+import GroupCalendarContainer from './groups/group_calendar_container';
 import GroupPageContentContainer from './groups/group_page_content_container';
 // import GroupEditContainer from './groups/forms/group_edit_container';
 import GroupFormContainer from './groups/forms/group_form_container';
@@ -58,9 +59,9 @@ const Root = ({ store }) => {
             <IndexRoute component={ GroupPageContentContainer } />
             <Route path='events/new' component={ EventFormContainer }/>
             <Route path='events/:eventId' component={ EventPageContainer }/>
+            <Route path='calendar' component={ GroupCalendarContainer } />
           {/*
           //   <Route path='edit' component={ GroupEditContainer }/>
-          //   <Route path='calendar' component={ GroupCalendarContainer } />
           */}
           </Route>
         </Route>
