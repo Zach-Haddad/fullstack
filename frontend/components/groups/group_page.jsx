@@ -11,6 +11,7 @@ class GroupPage extends React.Component {
     // this.editGroup = this.editGroup.bind(this);
     this.deleteGroup = this.deleteGroup.bind(this);
     this.createEventButton = this.createEventButton.bind(this);
+    this.calendarListToggleButton = this.calendarListToggleButton.bind(this);
   }
 
   componentDidMount() {
@@ -55,7 +56,10 @@ class GroupPage extends React.Component {
   }
 
   calendarListToggleButton(){
+    // debugger
+    if (this.props.router.location.pathname.includes('calendar')) {
 
+    }
   }
 
   render(){
@@ -68,7 +72,10 @@ class GroupPage extends React.Component {
           <div className="group-page-header">
             <h1>{group.name}</h1>
             <p>{group.description}</p>
-            <p>{this.joinToggleButton()}</p>
+              <div className="group-page-nav">
+                {this.joinToggleButton()}
+                {this.calendarListToggleButton()}
+              </div>
           </div>
 
           <div className="group-page-body">

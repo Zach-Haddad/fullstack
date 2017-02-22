@@ -1,6 +1,7 @@
 .group-page {
   display: flex;
   flex-direction: column;
+  min-height: 800px;
 }
 
 .group-page-header {
@@ -49,9 +50,9 @@
 .group-page-body {
   display: flex;
   flex-direction: row;
-  min-height: 400px;
-  width: 80%;
-  justify-content: center;
+  min-height: 500px;
+  margin: 0 auto;
+  width: 90%;
 }
 
 .group-page-sidebar {
