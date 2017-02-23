@@ -4,10 +4,11 @@ body{
   overflow: auto;
 }
 
-html {
-    overflow: hidden;
-    height: 100%;
-}
+// html {
+//     overflow: hidden;
+//     height: 100%;
+// }
+// removes white space jump with scrolling, messes up session form.  reimplement after you do modals!
 
 .hero-frame {
   max-width: 100%;
