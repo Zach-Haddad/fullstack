@@ -50,29 +50,42 @@ class GroupPage extends React.Component {
   }
 
   createEventButton(){
+    const eventRoute = () => {(
+      this.props.router.push(`groups/${this.props.group.id}/events/new`)
+    );};
     if (this.props.group.memberIds.includes(this.props.currentUser.id)){
       return(
-        <p><button><Link to={`groups/${this.props.group.id}/events/new`}>Add an Event!</Link></button></p>
+        <p><button onClick={eventRoute}>Add an Event!</button></p>
       );
     }
   }
 
   calendarButton(){
+    const calendarRoute = () => {(
+      this.props.router.push(`groups/${this.props.group.id}/calendar`)
+    );};
     return(
-      <button><Link to={`groups/${this.props.group.id}/calendar`}>Calendar</Link></button>
+      <button onClick={calendarRoute}>Calendar</button>
     );
   }
 
+
   groupHomeButton(){
+    const groupHomeRoute = () => {(
+      this.props.router.push(`groups/${this.props.group.id}`)
+    );};
     return(
-      <button><Link to={`groups/${this.props.group.id}`}>Group Home</Link></button>
-    )
+      <button onClick={groupHomeRoute}>Group Home</button>
+    );
   }
 
   homeButton(){
+    const homeRoute = () => {(
+      this.props.router.push(`/home`)
+    );};
     return(
-      <button><Link to={`/home`}>Main Page</Link></button>
-    )
+      <button onClick={homeRoute}>Main Page</button>
+    );
   }
 
   // TODO: responsive rendering of nav buttons; eq calendar button not showing up on calendar page
