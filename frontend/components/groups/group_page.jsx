@@ -11,7 +11,9 @@ class GroupPage extends React.Component {
     // this.editGroup = this.editGroup.bind(this);
     this.deleteGroup = this.deleteGroup.bind(this);
     this.createEventButton = this.createEventButton.bind(this);
-    this.calendarListToggleButton = this.calendarListToggleButton.bind(this);
+    this.calendarButton = this.calendarButton.bind(this);
+    this.groupHomeButton = this.groupHomeButton.bind(this);
+    this.homeButton = this.homeButton.bind(this);
   }
 
   componentDidMount() {
@@ -55,12 +57,28 @@ class GroupPage extends React.Component {
     }
   }
 
-  calendarListToggleButton(){
-    // debugger
-    if (this.props.router.location.pathname.includes('calendar')) {
-
-    }
+  calendarButton(){
+    return(
+      <button><Link to={`groups/${this.props.group.id}/calendar`}>Calendar</Link></button>
+    );
   }
+
+  groupHomeButton(){
+    return(
+      <button><Link to={`groups/${this.props.group.id}`}>Group Home</Link></button>
+    )
+  }
+
+  homeButton(){
+    return(
+      <button><Link to={`/home`}>Main Page</Link></button>
+    )
+  }
+
+  // TODO: responsive rendering of nav buttons; eq calendar button not showing up on calendar page
+  // if (this.props.router.location.pathname.includes('calendar'))
+  // currently link won't rerender buttons, may have to refactor group nav into own component
+  // with sep redux cycle
 
   render(){
     const { group, children } = this.props;
@@ -74,7 +92,9 @@ class GroupPage extends React.Component {
             <p>{group.description}</p>
               <div className="group-page-nav">
                 {this.joinToggleButton()}
-                {this.calendarListToggleButton()}
+                {this.homeButton()}
+                {this.groupHomeButton()}
+                {this.calendarButton()}
               </div>
           </div>
 
@@ -90,8 +110,6 @@ class GroupPage extends React.Component {
             {children}
           </div>
           </div>
-
-          <Link to='/home'>Back to Homepage</Link>
         </div>
       );
     }
