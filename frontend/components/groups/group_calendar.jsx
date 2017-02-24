@@ -19,7 +19,6 @@ class GroupCalendar extends React.Component {
         'title': event.name,
         eventId: event.id,
         groupId: event.group_id,
-        'allDay': true,
         'start': new Date(event.date.split("-").join(",")),
         'end': new Date(event.date.split("-").join(","))
       };
