@@ -112,12 +112,14 @@ class GroupPage extends React.Component {
           </div>
 
           <div className="group-page-body">
-          <aside className="group-page-sidebar">
-              <p>Group Since: {Date(group.created_at).slice(4, 15)}</p>
-              <p>Created By: {group.owner.username}</p>
-              <p>Number of members: {group.members.length}</p>
-              {this.createEventButton()}
-          </aside>
+            {this.props.router.location.pathname !== `/groups/${group.id}/events/new` &&
+                <aside className="group-page-sidebar">
+                    <p>Group Since: {Date(group.created_at).slice(4, 15)}</p>
+                    <p>Created By: {group.owner.username}</p>
+                    <p>Number of members: {group.members.length}</p>
+                    {this.createEventButton()}
+                </aside>
+            }
 
           <div className="group-page-right">
             {children}
