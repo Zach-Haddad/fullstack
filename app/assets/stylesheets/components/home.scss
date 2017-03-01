@@ -30,10 +30,11 @@ button:focus {
   height: 100px;
   text-align: center;
   font-family: $firac;
+  overflow: hidden;
 }
 
 .group-index-item p {
-  color: $lightest-blue;
+  color: $lightest-blue
 }
 
 .group-index-item:hover {
