@@ -1,0 +1,25 @@
+.event-details {
+  list-style: none;
+}
+
+.event-nav {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+}
+
+.event-nav button{
+  margin: 15px 10px 0 10px;
+  font: $firac;
+  font-size: 15px;
+  width: 15%;
+  padding: 5px;
+  background-color: $light-blue;
+  color: $darkest-blue;
+  border-radius: 10px;
+}
+
+.event-nav button:hover{
+  background: $lightest-blue;
+  cursor: pointer;
+}

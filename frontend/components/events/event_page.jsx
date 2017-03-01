@@ -7,6 +7,7 @@ class EventPage extends React.Component {
     this.addUserToEvent = this.addUserToEvent.bind(this);
     this.removeUserFromEvent = this.removeUserFromEvent.bind(this);
     this.deleteEvent = this.deleteEvent.bind(this);
+    this.groupHome = this.groupHome.bind(this);
   }
 
   componentDidMount() {
@@ -41,6 +42,15 @@ class EventPage extends React.Component {
       .then(() => this.props.router.push(`groups/${this.props.event.group.id}`));
   }
 
+  groupHome(){
+    const groupHomeRoute = () => {(
+      this.props.router.push(`groups/${this.props.currentGroupId}`)
+    );};
+    return(
+      <button onClick={groupHomeRoute}>Group Home</button>
+    );
+  }
+
   render(){
     const { event, children } = this.props;
     if (event.name === undefined || event.attendees === undefined){
@@ -56,8 +66,11 @@ class EventPage extends React.Component {
           <li>{event.date}</li>
           <li>{event.time}</li>
           <li>Attendees: {event.attendees.length}</li>
-          <li>{this.rsvpToggle()}</li>
         </ul>
+        <div className="event-nav">
+          {this.rsvpToggle()}
+          {this.groupHome()}
+        </div>
       </div>
       );
     }
