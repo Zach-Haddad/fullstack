@@ -49,6 +49,17 @@ class GroupPage extends React.Component {
     }
   }
 
+  editButton(){
+    if (this.props.currentUser.id === this.props.group.group_owner_id) {
+      const editRoute = () => {(
+        this.props.router.push(`groups/${this.props.group.id}/edit`)
+      );};
+      return(
+        <button onClick={editRoute}>Edit Group</button>
+      );
+    }
+  }
+
   createEventButton(){
     const eventRoute = () => {(
       this.props.router.push(`groups/${this.props.group.id}/events/new`)
@@ -108,11 +119,12 @@ class GroupPage extends React.Component {
                 {this.homeButton()}
                 {this.groupHomeButton()}
                 {this.calendarButton()}
+                {this.editButton()}
               </div>
           </div>
 
           <div className="group-page-body">
-            {this.props.router.location.pathname !== `/groups/${group.id}/events/new` &&
+            {this.props.router.location.pathname !== `/groups/${group.id}/events/new` && this.props.router.location.pathname !== `/groups/${group.id}/edit`&&
                 <aside className="group-page-sidebar">
                     <p>Group Since: {Date(group.created_at).slice(4, 15)}</p>
                     <p>Created By: {group.owner.username}</p>
