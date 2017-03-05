@@ -40,7 +40,6 @@ export const createEvent = (event) => {
   );
 };
 
-
 export const editEvent = (event) => (
   $.ajax({
     method: 'PATCH',

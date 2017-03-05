@@ -56,8 +56,14 @@ export const createEvent = (event) => dispatch => (
   );
 
 // export const editEvent = (event) => (
-//
-// export const deleteEvent = (id) => (
+
+export const editEvent = (event) => dispatch => (
+  APIUtil.editEvent(event)
+    .then(
+      editedEvent => dispatch(receiveEvent(editedEvent)),
+      err => dispatch(receiveErrors(err.responseJSON))
+    )
+);
 
 export const deleteEvent = (eventId) => dispatch => (
   APIUtil.deleteEvent(eventId)

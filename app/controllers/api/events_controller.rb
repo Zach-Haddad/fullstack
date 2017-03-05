@@ -13,7 +13,7 @@ class Api::EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     if @event.update_attributes(event_params)
-      render json: @event
+      render "api/events/show"
     else
       render json: @event.errors.full_messages, status: 422
     end
