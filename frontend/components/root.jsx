@@ -18,6 +18,7 @@ import GroupEditContainer from './groups/forms/group_edit_container';
 import GroupFormContainer from './groups/forms/group_form_container';
 
 import EventFormContainer from './events/forms/event_form_container';
+import EventEditFormContainer from './events/forms/event_edit_form_container';
 import EventPageContainer from './events/event_page_container';
 
 const Root = ({ store }) => {
@@ -58,7 +59,9 @@ const Root = ({ store }) => {
           <Route path='groups/:groupId' component={ GroupPageContainer } onEnter={_ensureLoggedIn}>
             <IndexRoute component={ GroupPageContentContainer } />
             <Route path='events/new' component={ EventFormContainer }/>
-            <Route path='events/:eventId' component={ EventPageContainer }/>
+            <Route path='events/:eventId' component={ EventPageContainer }>
+              <Route path='edit' component={ EventEditFormContainer }/>
+            </Route>
             <Route path='calendar' component={ GroupCalendarContainer } />
             <Route path='edit' component={ GroupEditContainer }/>
           </Route>

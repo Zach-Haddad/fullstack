@@ -37,6 +37,18 @@ class EventPage extends React.Component {
     }
   }
 
+  editButton(){
+    debugger
+    const eventEditRoute = () => {(
+      this.props.router.push(`groups/${this.props.params.groupId}/events/${this.props.event.id}/edit`)
+    );};
+    if (this.props.event.event_owner_id === this.props.currentUser.id) {
+      return(
+        <button onClick={eventEditRoute}>Edit Event</button>
+      );
+    }
+  }
+
   deleteEvent(){
     this.props.deleteEvent(this.props.event.id)
       .then(() => this.props.router.push(`groups/${this.props.event.group.id}`));
@@ -69,8 +81,11 @@ class EventPage extends React.Component {
         </ul>
         <div className="event-nav">
           {this.rsvpToggle()}
+          {this.editButton()}
           {this.groupHome()}
         </div>
+
+        {children}
       </div>
       );
     }

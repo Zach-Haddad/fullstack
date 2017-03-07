@@ -6,7 +6,7 @@ class eventEditForm extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      name: "",
+      name: this.props.eventDetail.name,
       description: "",
       date: "",
       time: "",
