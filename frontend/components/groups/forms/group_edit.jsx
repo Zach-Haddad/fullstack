@@ -80,7 +80,7 @@ class groupEdit extends React.Component {
           <br />
           <br />
 
-          <Link to='/groups/{this.props.groupDetail.id}'>Back to Group Page</Link>
+          <Link to={`/groups/${this.props.groupDetail.id}`}>Back to Group Page</Link>
         </form>
       </section>
     );

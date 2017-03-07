@@ -65,6 +65,8 @@ const Root = ({ store }) => {
             <Route path='calendar' component={ GroupCalendarContainer } />
             <Route path='edit' component={ GroupEditContainer }/>
           </Route>
+
+
         </Route>
      </Router>
     </Provider>
