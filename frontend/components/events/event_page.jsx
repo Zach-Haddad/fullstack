@@ -38,7 +38,6 @@ class EventPage extends React.Component {
   }
 
   editButton(){
-    debugger
     const eventEditRoute = () => {(
       this.props.router.push(`groups/${this.props.params.groupId}/events/${this.props.event.id}/edit`)
     );};
@@ -75,6 +74,7 @@ class EventPage extends React.Component {
         <ul className='event-details'>
           <li>{event.name}</li>
           <li>{event.description}</li>
+          <li>{event.location}</li>
           <li>{event.date}</li>
           <li>{event.time}</li>
           <li>Attendees: {event.attendees.length}</li>

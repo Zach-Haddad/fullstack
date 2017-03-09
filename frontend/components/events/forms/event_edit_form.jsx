@@ -7,13 +7,14 @@ class eventEditForm extends React.Component {
     super(props);
     this.state = {
       name: this.props.eventDetail.name,
-      description: "",
-      date: "",
-      time: "",
-      location: "",
-      group_id: this.props.currentGroupId,
-      event_owner_id: this.props.currentUserId,
-      calendar_date: ""
+      description: this.props.eventDetail.description,
+      date: this.props.eventDetail.date,
+      time: this.props.eventDetail.time.slice(11,19),
+      location: this.props.eventDetail.location,
+      group_id: this.props.eventDetail.group_id,
+      event_owner_id: this.props.eventDetail.event_owner_id,
+      calendar_date: this.props.eventDetail.calendar_date,
+      id: this.props.eventDetail.id
     };
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,7 +24,7 @@ class eventEditForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.setState({calendar_date: new Date(this.state.date + " " + this.state.time)})
-    this.props.createEvent(this.state)
+    this.props.editEvent(this.state)
       .then(data => {
         hashHistory.push(`/groups/${this.props.currentGroupId}`);});
   }
@@ -110,11 +111,11 @@ class eventEditForm extends React.Component {
           <br />
           <br />
 
-          <button>Create Event</button>
+          <button>Edit Event</button>
           <br />
           <br />
 
-          <Link to={`/groups/${this.props.currentGroupId}`}>Cancel</Link>
+          <Link to={`/groups/${this.props.currentGroupId}/events/${this.props.eventDetail.id}`}>Cancel</Link>
         </form>
       </section>
     );
