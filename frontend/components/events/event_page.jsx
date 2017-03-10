@@ -71,12 +71,12 @@ class EventPage extends React.Component {
     } else {
       return(
       <div className='event-page'>
+        <h2>{event.name}</h2>
+        <h4>{event.description}</h4>
         <ul className='event-details'>
-          <li>{event.name}</li>
-          <li>{event.description}</li>
-          <li>{event.location}</li>
-          <li>{event.date}</li>
-          <li>{event.time}</li>
+          <li>Location: {event.location}</li>
+          <li>Date: {event.date}</li>
+          <li>Time: {event.time}</li>
           <li>Attendees: {event.attendees.length}</li>
         </ul>
         <div className="event-nav">
