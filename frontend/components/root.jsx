@@ -21,6 +21,8 @@ import EventFormContainer from './events/forms/event_form_container';
 import EventEditFormContainer from './events/forms/event_edit_form_container';
 import EventPageContainer from './events/event_page_container';
 
+import ProfileContainer from './profile/profile_container';
+
 const Root = ({ store }) => {
 
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -64,6 +66,10 @@ const Root = ({ store }) => {
             </Route>
             <Route path='calendar' component={ GroupCalendarContainer } />
             <Route path='edit' component={ GroupEditContainer }/>
+          </Route>
+
+          <Route path='users/:userId' component={ ProfileContainer } onEnter={_ensureLoggedIn}>
+
           </Route>
 
 
