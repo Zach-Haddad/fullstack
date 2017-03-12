@@ -22,6 +22,7 @@ import EventEditFormContainer from './events/forms/event_edit_form_container';
 import EventPageContainer from './events/event_page_container';
 
 import ProfileContainer from './profile/profile_container';
+import EditProfileContainer from './profile/edit_profile_container';
 
 const Root = ({ store }) => {
 
@@ -71,6 +72,8 @@ const Root = ({ store }) => {
           <Route path='users/:userId' component={ ProfileContainer } onEnter={_ensureLoggedIn}>
 
           </Route>
+
+          <Route path='profile/edit' component={ EditProfileContainer } onEnter={_ensureLoggedIn}/>
 
 
         </Route>
