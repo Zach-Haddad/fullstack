@@ -7,8 +7,6 @@ const mapStateToProps = (state) => ({
   errors: state.errors
 });
 
-// messy code below; determining path on consecutive clicks of same button
-// yielded 'ogin' or 'ignup'
 const mapDispatchToProps = (dispatch, { location }) => {
   let formType = location.pathname[0] ===
     "/" ? location.pathname.slice(9) : location.pathname.slice(8);
