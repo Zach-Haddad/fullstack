@@ -2,7 +2,7 @@
 
 [Live][trekmates]
 
-[trekmates]: https://trekmates.club
+[trekmates]: http://trekmates.club
 
 ![Alt_Text](http://res.cloudinary.com/zach/image/upload/v1484956203/Screen_Shot_2017-01-20_at_3.49.24_PM_jlj9zq.png)
 
