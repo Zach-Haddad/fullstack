@@ -15,18 +15,17 @@ class Home extends React.Component{
   // temporary fix below, logging out does not precede render unless explicitly
   // inserted into render function.  Various lifecycle methods not working!
 
-// fix below; renders as null when new user.  group index container is never rendered!
   render(){
     if (!this.props.currentUser){
       hashHistory.push('/welcome');
     }
 
-    const userGroups = this.props.currentUser.groups;
+    // hacky fix below; will attempt to render with null groups otherwise
+    const userGroups = this.props.currentUser ? this.props.currentUser.groups : [];
     const userGroupList =
         <div className='user-groups-container'>
           <GroupIndexContainer />
         </div>;
-
 
     return(
       <div className='home-container'>
