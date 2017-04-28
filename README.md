@@ -1,13 +1,7 @@
 # TrekMates
 
-[Trekmates.club][trekmates]
+[Live][trekmates]
 
-[Heroku link][heroku]
-
-[Trello link][trello]
-
-[heroku]: http://trekmates.herokuapp.com/
-[trello]: https://trello.com/fullstackzachhaddad
 [trekmates]: https://trekmates.club
 
 ![Alt_Text](http://res.cloudinary.com/zach/image/upload/v1484956203/Screen_Shot_2017-01-20_at_3.49.24_PM_jlj9zq.png)
@@ -43,7 +37,7 @@ Event coordinators will have the ability to add an optional, pretraced route to 
 Implementation of comments system for groups and events.
 
 ### User Profile Customization
-Athletes will have the ability to add various parameters to their profile for advanced matchmaking (height, weight, average weekly mileage, etc)
+Athletes will have the ability to add various parameters to their profile for advanced matchmaking (height, weight, average weekly mileage, etc).  Account linking with Strava.
 
 ### Group and Friend Matchmaking
 Users will be able to match with other groups and users based on provided information, weekly schedule overlap!
