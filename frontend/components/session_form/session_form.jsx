@@ -9,6 +9,10 @@ class SessionForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
 	}
 
+  componentDidMount(){
+    this.props.clearErrors();
+  }
+
 	componentDidUpdate(nextProps) {
     if (this.props.route.path !== nextProps.route.path){
       this.props.clearErrors();
