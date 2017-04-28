@@ -3,12 +3,6 @@ import { Link } from 'react-router';
 import GreetingContainer from './greeting/greeting_container';
 import Footer from './footer/footer';
 
-// keep dyno alive
-const http = require("http");
-setInterval(function() {
-    http.get("http://trekmates.herokuapp.com");
-}, 300000);
-
 const App = ({ children }) => (
   <div className="page-background">
     <header>
