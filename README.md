@@ -1,6 +1,4 @@
-# Production Readme
-
-#TrekMates
+# TrekMates
 
 [Trekmates.club][trekmates]
 
