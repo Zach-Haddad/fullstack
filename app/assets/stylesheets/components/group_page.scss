@@ -89,3 +89,15 @@ a {
 .event-index-item a:hover {
   color: $light-blue
 }
+
+.group-events-blank, .group-events {
+  border: 2px solid $darkest-blue;
+  margin: 20px;
+  padding: 20px;
+  min-height: 420px;
+  background-color: $light-beige;
+}
+
+.group-events-blank {
+  text-align: center;
+}
