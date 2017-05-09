@@ -30,6 +30,8 @@ class Api::GroupsController < ApplicationController
       @groups = user_groups
     end
     render "api/groups/index"
+
+    params[:filter] = nil
   end
 
   def update
