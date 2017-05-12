@@ -27,7 +27,7 @@ class Api::GroupsController < ApplicationController
     elsif params[:filter]
       @groups = Group.where("name ~ ?", params[:filter])
     elsif params[:filter] == ""
-      @groups = user_groups
+      @groups = current_user.groups
     end
     render "api/groups/index"
 
