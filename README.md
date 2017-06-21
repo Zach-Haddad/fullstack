@@ -22,13 +22,12 @@ All members of a group may create an activity for that group.  Members who have 
 ### Search Filters
 In its current state, the search function allows users to search for groups by group name.  Users may also use a simple filter to display groups that they belong to, as well as all existing groups. A separate redux cycle is implemented for the search that passes a filter param to the backend, which then produces the correct list of groups.
 
-### Group Calendars
-[react-big-calendar][rbc] was used to display a calendar for each group's events.  Calendar items link to the respective event page.
-
 [rbc]: https://github.com/intljusticemission/react-big-calendar
 
 ![Alt Text](http://res.cloudinary.com/zach/image/upload/v1484955876/Screen_Shot_2017-01-20_at_3.44.00_PM_fc2hg6.png)
 
+### Group Calendars
+[React-big-calendar][rbc] was used to display a calendar for each group's events.  Calendar items link to the respective event page.
 
 ## Features In Progress
 
