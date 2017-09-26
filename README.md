@@ -29,6 +29,8 @@ In its current state, the search function allows users to search for groups by g
 ### Group Calendars
 [React-big-calendar][rbc] was used to display a calendar for each group's events.  Calendar items link to the respective event page.
 
+![Alt Text](http://res.cloudinary.com/zach/image/upload/v1506452522/readme2.png)
+
 ## Features In Progress
 
 ### Advanced Search Filters
