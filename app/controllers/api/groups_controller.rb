@@ -25,7 +25,7 @@ class Api::GroupsController < ApplicationController
     elsif params[:filter] == "//all"
       @groups = Group.all
     elsif params[:filter]
-      @groups = Group.where("name ~ ?", params[:filter])
+      @groups = Group.where("lower(name) ~ ?", params[:filter].downcase)
     elsif params[:filter] == ""
       @groups = current_user.groups
     end
