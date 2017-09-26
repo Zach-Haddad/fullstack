@@ -19,6 +19,8 @@ Users have the ability to join any group.  Group creators have the ability to de
 ### Creating and RSVPing for Events
 All members of a group may create an activity for that group.  Members who have not already RSVP'd may do so.  Other users must first join the group before they may RSVP.  Event creation automatically rsvp's the event creator for the event.  Event creators may delete their event.
 
+![Alt Text](http://res.cloudinary.com/zach/image/upload/v1506452522/readme3.png)
+
 ### Search Filters
 In its current state, the search function allows users to search for groups by group name.  Users may also use a simple filter to display groups that they belong to, as well as all existing groups. A separate redux cycle is implemented for the search that passes a filter param to the backend, which then produces the correct list of groups.
 
