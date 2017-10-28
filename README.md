@@ -41,9 +41,6 @@ Users will have the ability to filter groups and events based on date, disciplin
 ### Posting Event Routes
 Event coordinators will have the ability to add an optional, pretraced route to their activity.  This will be implemented with Google Maps Api.
 
-### Comments
-Implementation of comments system for groups and events.
-
 ### User Profile Customization
 Athletes will have the ability to add various parameters to their profile for advanced matchmaking (height, weight, average weekly mileage, etc).  Account linking with Strava.
 
